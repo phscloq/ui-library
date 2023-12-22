@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { poppins } from './ui/fonts';
 import './globals.css'
-
+import { Analytics } from '@vercel/analytics/react';
+import Navbar from './components/Navbar';
+import LeftNavbar from './components/Left-Nav';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -16,7 +19,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={poppins.className}>
+        <Navbar />
+        <LeftNavbar />
+        {children}
+              <Analytics />
+</body>
     </html>
   )
 }

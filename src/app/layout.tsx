@@ -5,7 +5,6 @@ import './globals.css'
 import { Analytics } from '@vercel/analytics/react';
 import Navbar from './lib/Navbar';
 import LeftNavbar from './lib/Left-Nav';
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',

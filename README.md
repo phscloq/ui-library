@@ -18,8 +18,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## The aim of the project
 This project made as a learning practice. I'll add components that I use in my projects and will make my own ui library. Instead of reinventing the wheel, I will make modification and improvement on the wheel.
-[ ] Add 2 components
-[ ] Add 4 components
-[ ] Add 8 components
-[ ] Publish on Vercel
-[ ] Dark theme
+- [ ] Add 2 components
+- [ ] Add 4 components
+- [ ] Add 8 components
+- [ ] Publish on Vercel
+- [ ] Dark theme

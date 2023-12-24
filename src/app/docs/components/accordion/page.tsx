@@ -15,7 +15,7 @@ export default function Accordion(){
                 </div>
             </div>
            <div className="mb-8">
-            <h4 className="mb-4">Let's do again but this time with an arrow:</h4>
+            <h4 className="mb-4">Let`&apos;`s do again but this time with an arrow:</h4>
                 <div className=" p-4 bg-gray-200 rounded-lg">
                     <AccordionArrow />
                 </div>

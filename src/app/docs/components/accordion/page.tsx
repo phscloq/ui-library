@@ -1,9 +1,13 @@
+'use client'
+import { useThemeContext } from "@/app/context";
 import { AccordionComponent, AccordionArrow, AccordionTriple } from "./accordion";
 export default function Accordion(){
+    const {dark} = useThemeContext();
+
     return (
-        <div className="p-8  w-2/3">
-            <div className="flex mb-4">   
-            <p className=" text-gray-400">docs{'>'}components{'>'}</p>
+        <div className={``}>
+            <div className="flex mb-4 gap-1">   
+            <p className=" text-gray-400">docs  {'>'}  components {'>'}</p>
                       <p className="text-black">accordion</p>
             </div>
                     
@@ -15,7 +19,7 @@ export default function Accordion(){
                 </div>
             </div>
            <div className="mb-8">
-            <h4 className="mb-4">Let`&apos;`s do again but this time with an arrow:</h4>
+            <h4 className="mb-4">Let &apos;s do again but this time with an arrow:</h4>
                 <div className=" p-4 bg-gray-200 rounded-lg">
                     <AccordionArrow />
                 </div>

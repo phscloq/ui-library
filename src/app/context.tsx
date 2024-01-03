@@ -2,7 +2,7 @@
 import React, { createContext, useContext } from "react";
 import { useState } from "react";
 
-interface ContextProps {
+/* interface ContextProps {
   dark: Boolean,
   handleTheme: ()=>void,  
 }
@@ -26,7 +26,7 @@ export function useThemeContext(){
   //inside the components i use const {var} = useThemeContext()
   const context = useContext(ThemeContext)
   return context;
-}
+} */
 
 //Pages Array Context
 //On going

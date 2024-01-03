@@ -1,8 +1,6 @@
 'use client'
-import { useThemeContext } from "@/app/context";
 import { AccordionComponent, AccordionArrow, AccordionTriple } from "./accordion";
 export default function Accordion(){
-    const {dark} = useThemeContext();
 
     return (
         <div className={``}>

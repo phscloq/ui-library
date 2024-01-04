@@ -1,13 +1,14 @@
 'use client'
+import Pathway from "@/app/lib/components/Pathway";
 import { AccordionComponent, AccordionArrow, AccordionTriple } from "./accordion";
 export default function Accordion(){
 
     return (
-        <div className={``}>
-            <div className="flex mb-4 gap-1">   
-            <p className=" text-gray-400">docs  {'>'}  components {'>'}</p>
-                      <p className="text-black">accordion</p>
-            </div>
+        <div className={` h-screen`}>
+            
+            <Pathway
+                page="accordion"
+            />
                     
             <h1 className="text-2xl mb-8">Accordion</h1>
             <div className="mb-8">

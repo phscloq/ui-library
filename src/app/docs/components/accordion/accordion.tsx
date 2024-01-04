@@ -4,7 +4,7 @@ export  function AccordionComponent(){
     const [accordion, setAccordion] = useState(false);
 
 return (
-    <div className="">
+    <div className=" text-black">
                 <button className="w-full flex justify-between" onClick={()=>{setAccordion(!accordion)}}>
                     <span>Section</span>
                     {accordion ? <span>-</span>:<span>+</span>}
@@ -25,7 +25,7 @@ export function AccordionArrow(){
     const [accordion, setAccordion] = useState(false);
 
     return (
-        <div className="">
+        <div className="text-black">
                     <button className="w-full flex justify-between" onClick={()=>{setAccordion(!accordion)}}>
                         <span>Section</span>
                         {accordion ? <span className=" rotate-90">{'>'}</span>:<span className="rotate-90">{'<'}</span>}
@@ -51,7 +51,7 @@ export function AccordionTriple(){
         setAccordionArr(newAccordionArr);
     };
     return(
-        <div>
+        <div className="text-black">
               <div className=" mb-2 ">
         <button className="w-full flex  justify-between" 
         onClick={()=>{toggleAccordion(0)}}>

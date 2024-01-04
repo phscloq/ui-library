@@ -1,6 +1,6 @@
 export default function Docs(){
     return (
-        <div className=" w-2/3  font-light  leading-8">
+        <div className=" ">
             <h1 className=" text-3xl">Introduction</h1>
             <h3 className=" font-normal">What &apos;s this site for?</h3>
             <div className="flex flex-col gap-4">

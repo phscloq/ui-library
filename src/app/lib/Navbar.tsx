@@ -1,13 +1,15 @@
 'use client'
-import { useThemeContext } from "../context";
 import Link from "next/link"
-export default function Navbar(){
-    const {dark, handleTheme} = useThemeContext();
+import ThemeToggle from "./components/Theme-Toggle";
+
+type Props = {theme: string}
+export default function Navbar({theme}:Props){
 
     return(
-        <nav className={`${dark ? 'bg-slate-600 bg-opacity-90' : ''}
-        flex  sticky top-0 z-40 w-full backdrop-blur bg-opacity-75  p-2  h-16 border-b`}>
-                <div className={`${dark ? 'text-stone-100': ''}
+        <nav className={`bg-opacity-75
+        flex  sticky top-0 z-40 w-full backdrop-blur  p-2  h-16 ${theme==='light'? '':'border-slate-800'} border-b`}>
+                <div className=
+                {`${theme==='dark'? 'text-stone-100':''}
                 flex px-12  align-middle items-center gap-14 text-gray-400`}>
                            
                             <Link href="/docs" 
@@ -28,8 +30,7 @@ export default function Navbar(){
                                 className="hover:text-slate-900 hover:font-medium">
                                 <button>GitHub</button>
                             </Link>
-                            <button onClick={()=>handleTheme()}>Lights</button>
-
+                            <ThemeToggle />
 
                             
                     

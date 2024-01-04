@@ -22,6 +22,29 @@ export function ThemeContextProvider({ children, value }: ThemeContextProviderPr
         setTheme(theme);
         create(theme);
     };
+
+    useEffect(() => {// Check for system preferences
+        const checkSystemPreferences = () => {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                handleThemeChange('dark');
+            } else {
+                handleThemeChange('light');
+            }
+        };
+
+        checkSystemPreferences(); // Check on mount
+
+        // Listen for changes in system preferences
+        const mediaQueryList = window.matchMedia('(prefers-color-scheme: dark)');
+        mediaQueryList.addEventListener("change", (ev) => {
+            checkSystemPreferences();
+          }, false);
+        // Cleanup listener on component unmount
+        return () => {
+            mediaQueryList.addEventListener("change", checkSystemPreferences);
+        };
+    }, []); 
+
     return (
         <ThemeContext.Provider value={{theme, handleThemeChange}}>
             {children}

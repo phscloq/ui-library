@@ -72,7 +72,18 @@ export default function LeftNavbar({theme}:{theme:string}){
                         Carousel
                     </button>
                 </Link>
-           
+
+                <Link  
+                    className={`${pathname === "/docs/components/toggle" ? 'text-black' : '' }
+                    ${pathname === "/docs/components/toggle"
+                    && 
+                    theme === 'dark' ? 'text-sky-500' : ''}
+                    `} 
+                    href="/docs/components/toggle">
+                    <button>
+                    Toggle
+                    </button>
+                </Link>
      
         
             </div>

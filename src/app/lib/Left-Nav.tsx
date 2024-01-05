@@ -6,13 +6,15 @@ export default function LeftNavbar({theme}:{theme:string}){
 
     const pathname = usePathname();
     return (
-        <div className={`${theme === 'dark'? 'border-slate-800':''}
-        left-0  border-r top-0 h-screen sticky  w-1/6 flex-shrink-0 `}>
-            <div className="sticky top-0 left-0 z-10 ">
+        <div className={`${theme === 'light'? '':'border-slate-800'}
+         hidden lg:block
+        left-0  border-r top-0 h-screen sticky  sm:w-1/6 flex-shrink-0 `}>
+           
+            <div className="sticky top-0 left-0 z-10 ">{/*Logo div */}
                 <div className="pt-8">
                     <Link 
                     className={`text-xl  tracking-wide text-black
-                    ${theme === 'dark'? 'text-stone-100':''}
+                    ${theme === 'light'? '':'text-stone-100'}
                     `} href="/">
                         <h1 className="px-10" >Baran UI</h1>
                     </Link>
@@ -20,6 +22,7 @@ export default function LeftNavbar({theme}:{theme:string}){
                 
             </div>
             
+            {/* Left Side Navbar List */}
             <div 
             className={`
             absolute p-8 flex flex-col text-gray-400
@@ -27,31 +30,33 @@ export default function LeftNavbar({theme}:{theme:string}){
             ${theme === 'dark'? 'text-stone-300':''}
             `}>
                 <h4 
-                className={`text-black
-                ${theme === 'dark'? 'text-stone-100':''}
-                `}>
+                    className={`text-black
+                    ${theme === 'light'? '':'text-stone-100'}
+                    `}>
                     Getting Started
                 </h4>
                 <Link 
-                className={`${pathname === "/docs" ? 'text-black' : '' }
-                ${pathname === '/docs' && theme === 'dark' ? 'text-sky-500' : ''}
-                `} 
-                href="/docs">
-                    <button>Introduction</button>
+                    className={`${pathname === "/docs" ? 'text-black' : '' }
+                    ${pathname === '/docs' && (theme === 'dark' || theme === 'system')? 'text-sky-500' : ''}
+                    `} 
+                    href="/docs">
+                    <button>
+                        Introduction
+                    </button>
                 </Link>
 
                 <h4 
-                className={`text-black
-                ${theme === 'dark'? 'text-stone-100':''}
-                `}>
-                    Components
+                    className={`text-black
+                    ${theme === 'light'? '':'text-stone-100'}
+                    `}>
+                        Components
                 </h4>
                 
                 <Link 
                     className={`${pathname === "/docs/components/accordion" ? 'text-black' : '' }
                     ${pathname === "/docs/components/accordion"
                     && 
-                    theme === 'dark' ? 'text-sky-500' : ''}
+                    (theme === 'dark' || theme === 'system') ? 'text-sky-500' : ''}
                     `} 
                     href="/docs/components/accordion">
                     <button>
@@ -65,7 +70,7 @@ export default function LeftNavbar({theme}:{theme:string}){
                     className={`${pathname === "/docs/components/carousel" ? 'text-black' : '' }
                     ${pathname === "/docs/components/carousel"
                     && 
-                    theme === 'dark' ? 'text-sky-500' : ''}
+                    (theme === 'dark' || theme === 'system') ? 'text-sky-500' : ''}
                     `} 
                     href="/docs/components/carousel">
                     <button>
@@ -77,11 +82,11 @@ export default function LeftNavbar({theme}:{theme:string}){
                     className={`${pathname === "/docs/components/toggle" ? 'text-black' : '' }
                     ${pathname === "/docs/components/toggle"
                     && 
-                    theme === 'dark' ? 'text-sky-500' : ''}
+                    (theme === 'dark' || theme === 'system') ? 'text-sky-500' : ''}
                     `} 
                     href="/docs/components/toggle">
                     <button>
-                    Toggle
+                        Toggle
                     </button>
                 </Link>
      

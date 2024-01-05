@@ -4,7 +4,7 @@ import { AccordionComponent, AccordionArrow, AccordionTriple } from "./accordion
 export default function Accordion(){
 
     return (
-        <div className={` h-screen`}>
+        <div className={``}>
             
             <Pathway
                 page="accordion"
@@ -23,13 +23,13 @@ export default function Accordion(){
                     <AccordionArrow />
                 </div>
            </div>
-           <div className="">
+           <div className="mb-8">
             <h4 className="mb-4">And with three sections:</h4>
                 <div className=" p-4 bg-gray-200 rounded-lg">
                     <AccordionTriple />
                 </div>
            </div>
-          
+           
         </div>
     )
 }

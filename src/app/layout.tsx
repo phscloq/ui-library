@@ -6,7 +6,8 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import Navbar from './lib/Navbar';
 import LeftNavbar from './lib/Left-Nav';
 import { cookies } from 'next/headers';
-import { ThemeContextProvider } from './Theme-Context';
+import { ThemeContextProvider, MobileMenuContextProvider } from './contexts';
+import Main from './lib/components/Main';
 export const metadata: Metadata = {
   title: 'Baran UI',
   description: 'Baran UI Library',
@@ -28,17 +29,14 @@ const theme = cookieStore.get('theme')?.value ?? 'light';
         <ThemeContextProvider
         value={theme}
         >
-            <LeftNavbar theme={theme}/>
-          <div className='flex flex-col w-full'>
-          <Navbar theme={theme} />
-          <div className=' p-8
-          font-light  leading-8
-          w-3/5'>
+          <MobileMenuContextProvider>
+            
+          <Main>
             {children}
-          </div>
-          </div>
+          </Main>
         <SpeedInsights />
         <Analytics />
+        </MobileMenuContextProvider>
         </ThemeContextProvider>
       </body>
     </html>

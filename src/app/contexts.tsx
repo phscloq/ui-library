@@ -4,9 +4,7 @@ import { create } from './utils/cookies';
 
 type ThemeContextType = {
     theme: string;
-    systemSelected: boolean;
     handleThemeChange: (theme: string) => void;
-    handleSystemSelected: (e: string) => void;
 };
 type ThemeContextProviderProps = {
     children: React.ReactNode;
@@ -15,38 +13,13 @@ type ThemeContextProviderProps = {
 
 export const ThemeContext = createContext<ThemeContextType>({
     theme: 'light',
-    systemSelected: false,
     handleThemeChange: () => {},
-    handleSystemSelected: () => {},
 });
 export function ThemeContextProvider({ children, value }: ThemeContextProviderProps) {
     const [theme, setTheme] = useState<string>(value ? value : 'light'); // Provide a default value for the theme state variable
-    const [systemSelected, setSystemSelected] = useState<boolean>(false); // Provide a default value for the theme state variable
-    const handleThemeChange = (theme: string) => {
-        setTheme(theme);
-        create(theme);
-    };
-
-    const handleSystemSelected = (e: string) =>{
-        if(e === 'system'){
-            setSystemSelected(true);
-        }else{
-            setSystemSelected(false);
-        }
-    }
-
+    
     useEffect(() => {// Check for system preferences
-        const checkSystemPreferences = () => {
-            if(systemSelected){
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                handleThemeChange('dark');
-            } else {
-                handleThemeChange('light');
-            }}
-        };
-
-        checkSystemPreferences(); // Check on mount
-
+       
         // Listen for changes in system preferences
         const mediaQueryList = window.matchMedia('(prefers-color-scheme: dark)');
         mediaQueryList.addEventListener("change", (ev) => {
@@ -54,12 +27,37 @@ export function ThemeContextProvider({ children, value }: ThemeContextProviderPr
           }, false);
         // Cleanup listener on component unmount
         return () => {
-            mediaQueryList.addEventListener("change", checkSystemPreferences);
+            mediaQueryList.removeEventListener("change", checkSystemPreferences);
         };
     }, []); 
+    
+    const checkSystemPreferences = () => {
+       
+
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            
+            handleThemeChange('dark');
+        } else {
+            handleThemeChange('light');
+        }
+    };
+    const handleThemeChange = (theme: string) => {
+        if(theme != 'system'){
+            setTheme(theme);
+            create(theme);
+        }else if(theme === 'system'){
+            checkSystemPreferences();
+        }
+        console.log(theme);
+    };
+
+    
+    
+
+    
 
     return (
-        <ThemeContext.Provider value={{theme, systemSelected, handleSystemSelected, handleThemeChange}}>
+        <ThemeContext.Provider value={{theme, handleThemeChange}}>
             {children}
         </ThemeContext.Provider>
     )

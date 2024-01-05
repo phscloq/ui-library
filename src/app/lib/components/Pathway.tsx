@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { ThemeContext } from "@/app/Theme-Context"
+import { ThemeContext } from "@/app/contexts"
 
 type Props = {page:string}
 export default function Pathway({page}:Props){

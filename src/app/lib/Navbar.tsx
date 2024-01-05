@@ -15,7 +15,7 @@ const {handleMobileMenuChange} = useContext(MobileMenuContext);
                 <div className=
                 {`${theme === 'light'? '':'text-stone-100'}
                 sm:flex   gap-14 text-gray-400 sm:items-center`}>
-                           <div className="hidden lg:flex gap-14  items-center">
+                           <div className="hidden sm:flex gap-14  items-center">
                                 <Link href="/docs" 
                                         className="hover:text-slate-900 hover:font-medium ml-8">
                                         <button>Documentation</button>
@@ -46,7 +46,7 @@ const {handleMobileMenuChange} = useContext(MobileMenuContext);
                             
                     
                 </div>
-                <div className="flex flex-col  pt-2 sm:w-full lg:hidden">
+                <div className="flex flex-col  pt-2 sm:w-full sm:hidden">
                                 <div className="w-full flex items-center justify-between">
                                         <Logo />
                                         <button className="text-slate-500 w-8 h-8 flex items-center justify-center hover:text-slate-600"

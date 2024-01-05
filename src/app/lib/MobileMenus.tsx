@@ -5,9 +5,9 @@ import { usePathname } from "next/navigation";
 
 export default function MobileMenuPopOut(){
     const {mobileMenuOpen, handleMobileMenuChange} = useContext(MobileMenuContext);
-    const {theme, handleThemeChange, handleSystemSelected} = useContext(ThemeContext);
+    const {theme, handleThemeChange} = useContext(ThemeContext);
     return(
-        <div className={`${mobileMenuOpen ? 'block' : 'hidden'} sm:hidden
+        <div className={`${mobileMenuOpen ? 'block' : 'hidden'} lg:hidden
         bg-slate-800 w-full z-50  absolute inset-0 
         backdrop-blur-sm bg-opacity-75
         `}>
@@ -64,7 +64,7 @@ export default function MobileMenuPopOut(){
                             <select className={`rounded-md w-28 h-10  font-medium shadow-md
                             ${theme === 'light' ? 'bg-slate-200 ' : 'bg-slate-500'}
                             `}
-                            onChange={(e)=>{handleThemeChange(e.target.value); handleSystemSelected(e.target.value);}}
+                            onChange={(e)=>{handleThemeChange(e.target.value); }}
                             defaultValue={theme}
                             >
                                 <option value='light'>Light</option>
@@ -87,13 +87,13 @@ export function LeftMenuBar(){
     const {leftNavOpen, handleLeftNavChange} = useContext(MobileMenuContext);
     const pathname = usePathname();
     return (
-    <div className={`${leftNavOpen ? 'block' : 'hidden'}  sm:hidden
+    <div className={`${leftNavOpen ? 'block' : 'hidden'}  lg:hidden
         bg-slate-800 w-full z-50  absolute inset-0 h-full 
         backdrop-blur-sm bg-opacity-75
         `}>
         <div className={`${theme === 'light'? 'bg-slate-100':'bg-slate-800'}
-         sm:hidden  block  w-4/5  p-4  
-        left-0   top-0 h-screen fixed  sm:w-1/6 flex-shrink-0 `}>
+         lg:hidden  block  w-4/5  p-4  sm:w-1/3
+        left-0   top-0 h-screen fixed   flex-shrink-0 `}>
             <button
                     className="
                     absolute top-2  right-2 text-xl font-semibold

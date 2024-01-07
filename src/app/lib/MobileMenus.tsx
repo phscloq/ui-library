@@ -8,7 +8,7 @@ export default function MobileMenuPopOut(){
     const {theme, handleThemeChange} = useContext(ThemeContext);
     return(
         <div className={`${mobileMenuOpen ? 'block' : 'hidden'} lg:hidden
-        bg-slate-800 w-full z-50  absolute inset-0 
+        bg-slate-800 fixed w-full h-full z-50  inset-0 
         backdrop-blur-sm bg-opacity-75
         `}>
             <div className={`
@@ -88,12 +88,12 @@ export function LeftMenuBar(){
     const pathname = usePathname();
     return (
     <div className={`${leftNavOpen ? 'block' : 'hidden'}  lg:hidden
-        bg-slate-800 w-full z-50  absolute inset-0 h-full 
+        bg-slate-800 w-full z-50  fixed inset-0 h-full 
         backdrop-blur-sm bg-opacity-75
         `}>
         <div className={`${theme === 'light'? 'bg-slate-100':'bg-slate-800'}
          lg:hidden  block  w-4/5  p-4  sm:w-1/3
-        left-0   top-0 h-screen fixed   flex-shrink-0 `}>
+        left-0   top-0 h-full fixed   flex-shrink-0 `}>
             <button
                     className="
                     absolute top-2  right-2 text-xl font-semibold

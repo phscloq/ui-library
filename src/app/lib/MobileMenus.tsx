@@ -163,7 +163,7 @@ export function LeftMenuBar(){
 
                 <Link  
                     className={`${pathname === "/docs/components/toggle" ? 'text-black' : '' }
-                    ${pathname === "/docs/components/toggle"
+                    ${pathname === "/docs/components/switch"
                     && 
                     (theme === 'dark' || theme==='system') ? 'text-sky-500' : ''}
                     `} 

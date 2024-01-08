@@ -79,14 +79,14 @@ export default function LeftNavbar({theme}:{theme:string}){
                 </Link>
 
                 <Link  
-                    className={`${pathname === "/docs/components/toggle" ? 'text-black' : '' }
-                    ${pathname === "/docs/components/toggle"
+                    className={`${pathname === "/docs/components/switch" ? 'text-black' : '' }
+                    ${pathname === "/docs/components/switch"
                     && 
                     (theme === 'dark' || theme === 'system') ? 'text-sky-500' : ''}
                     `} 
-                    href="/docs/components/toggle">
+                    href="/docs/components/switch">
                     <button>
-                        Toggle
+                        Switch
                     </button>
                 </Link>
      

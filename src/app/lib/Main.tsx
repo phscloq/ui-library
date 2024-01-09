@@ -2,12 +2,11 @@
 
 import {ThemeContext } from "@/app/contexts";
 import { useContext } from "react";
-import Link from "next/link";
-import MobileMenu, { LeftMenuBar } from "../MobileMenus";
-import LeftNavbar from "../Left-Nav";
-import Navbar from "../Navbar";
-import Hamburger from "./Hamburger";
-import MobileMenuPopOut from "../MobileMenus";
+import LeftNavbar from "./Left-Nav";
+import MobileMenuPopOut, { LeftMenuBar } from "./MobileMenus";
+import Navbar from "./Navbar";
+import Hamburger from "./components/Hamburger";
+
 interface Props{
     children: React.ReactNode
 }

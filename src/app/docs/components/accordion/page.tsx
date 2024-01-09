@@ -4,7 +4,7 @@ import { AccordionComponent, AccordionArrow, AccordionTriple } from "./accordion
 import { useState } from "react";
 import CodePreview from "./components/CodePreview";
 export default function Accordion(){
-const [preview, setPreview] = useState(false)
+const [preview, setPreview] = useState(true)
     return (
         <div className={``}>
             

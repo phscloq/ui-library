@@ -7,7 +7,7 @@ import Navbar from './lib/Navbar';
 import LeftNavbar from './lib/Left-Nav';
 import { cookies } from 'next/headers';
 import { ThemeContextProvider, MobileMenuContextProvider } from './contexts';
-import Main from './lib/components/Main';
+import Main from './lib/Main';
 export const metadata: Metadata = {
   title: 'Baran UI',
   description: 'Baran UI Library',

@@ -63,10 +63,22 @@ export default function LeftNavbar({theme}:{theme:string}){
                         Accordion
                     </button>
                 </Link>
+
+                <Link  
+                    className={`${pathname === "/docs/components/button" ? 'text-black' : '' }
+                    ${pathname === "/docs/components/button"
+                    && 
+                    (theme === 'dark' || theme === 'system') ? 'text-sky-500' : ''}
+                    `} 
+                    href="/docs/components/button">
+                    <button>
+                        Button
+                    </button>
+                </Link>
                 {/* <Link className={`${pathname === "/docs/components/calendar" ? 'text-black' : '' }`} href="/docs/components/calendar">
                     <button>Calendar</button>
                 </Link> */}
-                <Link  
+                {/* <Link  
                     className={`${pathname === "/docs/components/carousel" ? 'text-black' : '' }
                     ${pathname === "/docs/components/carousel"
                     && 
@@ -76,7 +88,7 @@ export default function LeftNavbar({theme}:{theme:string}){
                     <button>
                         Carousel
                     </button>
-                </Link>
+                </Link> */}
 
                 <Link  
                     className={`${pathname === "/docs/components/switch" ? 'text-black' : '' }

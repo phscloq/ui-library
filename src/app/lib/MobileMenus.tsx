@@ -146,8 +146,18 @@ export function LeftMenuBar(){
                         Accordion
                     </button>
                 </Link>
-               
                 <Link  
+                    className={`${pathname === "/docs/components/button" ? 'text-black' : '' }
+                    ${pathname === "/docs/components/button"
+                    && 
+                    (theme === 'dark' || theme === 'system') ? 'text-sky-500' : ''}
+                    `} 
+                    href="/docs/components/button">
+                    <button>
+                        Button
+                    </button>
+                </Link>
+               {/*  <Link  
                     className={`${pathname === "/docs/components/carousel" ? 'text-black' : '' }
                     ${pathname === "/docs/components/carousel"
                         && 
@@ -159,19 +169,19 @@ export function LeftMenuBar(){
                     >
                         Carousel
                     </button>
-                </Link>
+                </Link> */}
 
                 <Link  
-                    className={`${pathname === "/docs/components/toggle" ? 'text-black' : '' }
+                    className={`${pathname === "/docs/components/switch" ? 'text-black' : '' }
                     ${pathname === "/docs/components/switch"
                     && 
                     (theme === 'dark' || theme==='system') ? 'text-sky-500' : ''}
                     `} 
-                    href="/docs/components/toggle">
+                    href="/docs/components/switch">
                     <button
                     onClick={()=>handleLeftNavChange()}
                     >
-                        Toggle
+                        Switch
                     </button>
                 </Link>
 

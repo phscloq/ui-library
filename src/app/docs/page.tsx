@@ -1,19 +1,18 @@
+import Link from "next/link";
+
 export default function Docs(){
     return (
         <div className=" ">
-            <h1 className=" text-3xl">Introduction</h1>
-            <h3 className=" font-normal">What &apos;s this site for?</h3>
-            <div className="flex flex-col gap-4">
-            <p>Baran UI is kinda ui library. &quot;Kinda&quot; because it is not a package.</p>
-               <p>Over the course of my journey at web development I felt the need for ready-to-use components.
-               And as a learning experience I have decided to built mine. This will help me to code from zero every web app that I am building.
-            </p>
-            <p>It is free to use. No citetation necessary.
-                If you think there is a better way to code better the components you see here, you can edit on github.
-                Only obligation is using tailwindcss. Thank you for your time.
-            </p>
-            </div>
+            <h1 className=" text-3xl mb-4">Introduction</h1>
             
+            <p>1. All the components made with tailwindcss.</p>
+            <p>You can check the classnames and use them in your stylesheet but easiest would be using the tailwindcss.</p>
+            <p>2. Other than tailwind, you will see that I am using React, and specifically a react framework, NextJS.</p>
+            <p>Some of the components functionality reached by useState</p>
+            <p>For more information about the technologies:</p> 
+            <Link className="hover:text-sky-500 font-normal" href="https://react.dev/learn">React</Link> <Link 
+            className="hover:text-sky-500  font-normal"
+            href="https://tailwindcss.com/docs">tailwindcss</Link> <Link className="hover:text-sky-500 font-normal" href="https://react.dev/reference/react/useState">useState</Link> <Link className="hover:text-sky-500 font-normal" href="https://nextjs.org/docs">NextJS</Link>
         </div>
     )
 }

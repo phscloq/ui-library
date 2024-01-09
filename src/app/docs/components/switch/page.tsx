@@ -1,8 +1,8 @@
 'use client'
 import Pathway from "@/app/lib/components/Pathway"
-import SwitchComponent from "./components/Switch"
 import CodePreview from "./components/CodePreview"
 import { useState } from "react"
+import SwitchComponent from "./components/switch"
 
 export default function Switch(){
 const [preview, setPreview] = useState(true)

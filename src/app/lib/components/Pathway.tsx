@@ -9,8 +9,8 @@ export default function Pathway({page}:Props){
         <div className="flex mb-4 gap-1">   
             <p className=" text-gray-400">docs  {'>'}  components {'>'}</p>
             <p 
-                className={`text-black 
-                ${theme==='dark'? 'text-stone-100': ''}`}
+                className={`
+                ${theme==='dark' ? 'text-stone-100': 'text-black '}`}
                 >
                 {page}
                 </p>

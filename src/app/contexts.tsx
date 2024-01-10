@@ -1,6 +1,6 @@
 'use client'
 import { createContext, useEffect, useState } from 'react'
-import { create } from './utils/cookies';
+import { create, getThemeCookie } from './utils/cookies';
 
 type ThemeContextType = {
     theme: string;
@@ -8,15 +8,28 @@ type ThemeContextType = {
 };
 type ThemeContextProviderProps = {
     children: React.ReactNode;
-    value: string;
 };
 
 export const ThemeContext = createContext<ThemeContextType>({
-    theme: 'light',
+    theme: '',
     handleThemeChange: () => {},
 });
-export function ThemeContextProvider({ children, value }: ThemeContextProviderProps) {
-    const [theme, setTheme] = useState<string>(value ? value : 'light'); // Provide a default value for the theme state variable
+export function ThemeContextProvider({ children }: ThemeContextProviderProps) {
+    const [theme, setTheme] = useState<string>(''); 
+    
+    
+    useEffect(() => {
+        const fetchStoredTheme = async () => {
+            const storedTheme = await getThemeCookie();
+            if (storedTheme && storedTheme!== theme) {
+                // If there is a stored theme and it's different from the current theme, update the theme
+                setTheme(storedTheme);
+            }
+        };
+
+        fetchStoredTheme();
+    }, [theme]);
+
     
     useEffect(() => {// Check for system preferences
        
@@ -48,7 +61,6 @@ export function ThemeContextProvider({ children, value }: ThemeContextProviderPr
         }else if(theme === 'system'){
             checkSystemPreferences();
         }
-        console.log(theme);
     };
 
     

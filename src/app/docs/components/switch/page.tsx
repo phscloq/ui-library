@@ -1,10 +1,12 @@
 'use client'
 import Pathway from "@/app/lib/components/Pathway"
 import CodePreview from "./components/CodePreview"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import SwitchComponent from "./components/switch"
+import { ThemeContext } from "@/app/contexts"
 
 export default function Switch(){
+const {theme} = useContext(ThemeContext);
 const [preview, setPreview] = useState(true)
     return (
         <div className="">
@@ -18,7 +20,10 @@ const [preview, setPreview] = useState(true)
             <div>
                 <div className="flex gap-4 text-slate-300 border-b border-slate-400 mb-2">
                     <button 
-                    className={`${preview ? ' text-slate-200 border-b-2 border-slate-300' : ' text-slate-400'} px-2 py-1 `}
+                    className={`
+                    ${theme === 'light' && preview ? 'text-black border-b-2 border-slate-300':'text-slate-400'}
+                    ${theme === 'light' && !preview ? 'text-black':'text-red-400'}
+                    px-2 py-1 `}
                     onClick={()=>setPreview(true)}>Preview</button>
                     <button 
                     className={`${!preview ? ' text-slate-200 border-b-2 border-slate-300' : ' text-slate-400'} px-2 py-1 `}

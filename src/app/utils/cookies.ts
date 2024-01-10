@@ -6,5 +6,5 @@ export async function create(theme:string) {
   cookies().set('theme', theme)
 }
 export const getThemeCookie = async () => {
-    return cookies().get('theme');
+    return cookies().get('theme')?.value;
   };

@@ -1,8 +1,10 @@
 'use client'
 import Pathway from "@/app/lib/components/Pathway";
 import { AccordionComponent, AccordionArrow, AccordionTriple } from "./accordion";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import CodePreview from "./components/CodePreview";
+import { ThemeContext } from "@/app/contexts";
+import TabSwitch from "@/app/lib/components/Tab-Switch";
 export default function Accordion(){
 const [preview, setPreview] = useState(true)
     return (
@@ -27,14 +29,7 @@ const [preview, setPreview] = useState(true)
            </div>
            <div className="mb-8">
             <h4 className="mb-4">Example:</h4>
-                <div className="flex gap-4 text-slate-300 border-b border-slate-400 mb-2">
-                    <button 
-                    className={`${preview ? ' text-slate-200 border-b-2 border-slate-300' : ' text-slate-400'} px-2 py-1 `}
-                    onClick={()=>setPreview(true)}>Preview</button>
-                    <button 
-                    className={`${!preview ? ' text-slate-200 border-b-2 border-slate-300' : ' text-slate-400'} px-2 py-1 `}
-                    onClick={()=>setPreview(false)}>Code</button>
-                </div>
+                <TabSwitch preview={preview} setPreview={setPreview} />
                 
                   {preview ? <AccordionTriple /> :  <CodePreview /> }  
                 </div>

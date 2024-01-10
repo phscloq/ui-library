@@ -2,10 +2,10 @@
 
 import {ThemeContext } from "@/app/contexts";
 import { useContext } from "react";
-import LeftNavbar from "./Left-Nav";
-import MobileMenuPopOut, { LeftMenuBar } from "./MobileMenus";
-import Navbar from "./Navbar";
-import Hamburger from "./components/Hamburger";
+import LeftNavbar from "../Left-Nav";
+import MobileMenuPopOut, { LeftMenuBar } from "../MobileMenus";
+import Navbar from "../Navbar";
+import Hamburger from "./Hamburger";
 
 interface Props{
     children: React.ReactNode
@@ -14,7 +14,10 @@ interface Props{
 export default function Main({children}:Props){
     const {theme} = useContext(ThemeContext);
     return (
-        <div className="sm:flex h-screen w-full">
+        <div className={` sm:flex h-screen w-full
+        ${theme==='light' ? ' bg-white' : 'bg-slate-700 text-stone-100'}
+        `
+        }>
             <LeftNavbar theme={theme}/>
             <LeftMenuBar />
             <div className='flex flex-col w-full max-h-[820px]'>

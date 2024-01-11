@@ -1,12 +1,17 @@
 'use client'
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { use, useEffect } from "react";
 
 export default function LeftNavbar({theme}:{theme:string}){
 
+    useEffect(()=>{
+        console.log("Left Navbar rerendered")
+        console.log(theme)
+    })
     const pathname = usePathname();
     return (
-        <div className={`${theme === 'light'? '':'border-slate-800'}
+        <div className={`${theme === 'light' ? '':'border-slate-800'}
          hidden lg:block
         left-0  border-r top-0 h-screen sticky  sm:w-1/6 flex-shrink-0 `}>
            
@@ -27,7 +32,7 @@ export default function LeftNavbar({theme}:{theme:string}){
             className={`
             absolute p-8 flex flex-col text-gray-400
             overflow-y-auto gap-4
-            ${theme === 'dark'? 'text-stone-300':''}
+            ${theme === 'light' ? '':'text-stone-300'}
             `}>
                 <h4 
                     className={`text-black
@@ -53,10 +58,13 @@ export default function LeftNavbar({theme}:{theme:string}){
                 </h4>
                 
                 <Link 
-                    className={`${pathname === "/docs/components/accordion" ? 'text-black' : '' }
+                    className={`${pathname === "/docs/components/accordion"
+                    &&
+                    theme === 'light'
+                    ? 'text-black' : '' }
                     ${pathname === "/docs/components/accordion"
                     && 
-                    (theme === 'dark' || theme === 'system') ? 'text-sky-500' : ''}
+                    theme === 'dark'  ? 'text-sky-500' : ''}
                     `} 
                     href="/docs/components/accordion">
                     <button>

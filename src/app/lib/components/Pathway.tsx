@@ -10,7 +10,7 @@ export default function Pathway({page}:Props){
             <p className=" text-gray-400">docs  {'>'}  components {'>'}</p>
             <p 
                 className={`
-                ${theme==='dark' ? 'text-stone-100': 'text-black '}`}
+                ${theme==='light' ? 'text-black ': 'text-stone-100'}`}
                 >
                 {page}
                 </p>

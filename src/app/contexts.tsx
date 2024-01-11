@@ -38,14 +38,15 @@ export function ThemeContextProvider({ children, value }: ThemeContextProviderPr
     
     const checkSystemPreferences = () => {
        
-        if(theme === 'system'){
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             
-                handleThemeChange('dark');
+                setTheme('dark');
+                create('system')
             } else {
-                handleThemeChange('light');
+                setTheme('light');
+                create('system')
             }
-        }
+        
 
        
     };

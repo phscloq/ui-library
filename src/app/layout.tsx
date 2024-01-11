@@ -17,13 +17,16 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+const theme = cookies().get('theme')?.value;
 
   return (
     <html lang="en">        
       <body 
       className={`${poppins.className}
       flex`}>
-        <ThemeContextProvider>
+        <ThemeContextProvider
+        value={theme}
+        >
           <MobileMenuContextProvider>
             
           <Main>

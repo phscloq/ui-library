@@ -8,34 +8,22 @@ type ThemeContextType = {
 };
 type ThemeContextProviderProps = {
     children: React.ReactNode;
+    value?: string;
 };
 
 export const ThemeContext = createContext<ThemeContextType>({
     theme: '',
     handleThemeChange: () => {},
 });
-export function ThemeContextProvider({ children }: ThemeContextProviderProps) {
-    const [theme, setTheme] = useState<string>(''); 
-    
-    
-    useEffect(() => {
-        const fetchStoredTheme = async () => {
-            const storedTheme = await getThemeCookie();
-            if (storedTheme && storedTheme!== theme) {
-                // If there is a stored theme and it's different from the current theme, update the theme
-                setTheme(storedTheme);
-            }
-        };
-
-        fetchStoredTheme();
-    }, [theme]);
-
+export function ThemeContextProvider({ children, value }: ThemeContextProviderProps) {
+    const [theme, setTheme] = useState<string>(value ? value : 'light'); 
     
     useEffect(() => {// Check for system preferences
        
         // Listen for changes in system preferences
         const mediaQueryList = window.matchMedia('(prefers-color-scheme: dark)');
         mediaQueryList.addEventListener("change", (ev) => {
+            console.log("system theme check")
             checkSystemPreferences();
           }, false);
         // Cleanup listener on component unmount
@@ -44,18 +32,25 @@ export function ThemeContextProvider({ children }: ThemeContextProviderProps) {
         };
     }, []); 
     
+  
+
+    
+    
     const checkSystemPreferences = () => {
        
-
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        if(theme === 'system'){
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             
-            handleThemeChange('dark');
-        } else {
-            handleThemeChange('light');
+                handleThemeChange('dark');
+            } else {
+                handleThemeChange('light');
+            }
         }
+
+       
     };
     const handleThemeChange = (theme: string) => {
-        if(theme != 'system'){
+        if(theme !== 'system'){
             setTheme(theme);
             create(theme);
         }else if(theme === 'system'){

@@ -7,6 +7,7 @@ export default function SwitchComponent(){
                 className="bg-slate-300 has-[:checked]:bg-black 
                 relative w-16 h-8 rounded-full
                 transition-all duration-200
+                cursor-pointer
                 "
                 >
                     <input type="checkbox" id="holidaymode" className=" sr-only peer" />

@@ -1,13 +1,11 @@
 'use client'
-import Pathway from "@/app/lib/components/Pathway"
-import CodePreview from "./components/CodePreview"
-import { useContext, useState } from "react"
+import Pathway from "@/app/lib/components/pathway"
+import CodePreview from "./components/code-preview"
+import { useState } from "react"
 import SwitchComponent from "./components/switch"
-import { ThemeContext } from "@/app/contexts"
-import TabSwitch from "@/app/lib/components/Tab-Switch"
+import TabSwitch from "@/app/lib/components/tab-switch"
 
 export default function Switch(){
-const {theme} = useContext(ThemeContext);
 const [preview, setPreview] = useState(true)
     return (
         <div className="">

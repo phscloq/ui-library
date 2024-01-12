@@ -3,10 +3,10 @@ import { poppins } from './ui/fonts';
 import './globals.css'
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-
 import { cookies } from 'next/headers';
 import { ThemeContextProvider, MobileMenuContextProvider } from './contexts';
-import Main from './lib/components/Main';
+import Main from './lib/components/main';
+
 export const metadata: Metadata = {
   title: 'Baran UI',
   description: 'Baran UI Library',

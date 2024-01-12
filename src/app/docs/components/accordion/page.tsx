@@ -1,10 +1,9 @@
 'use client'
-import Pathway from "@/app/lib/components/Pathway";
+import Pathway from "@/app/lib/components/pathway";
 import { AccordionComponent, AccordionArrow, AccordionTriple } from "./accordion";
-import { useContext, useState } from "react";
-import CodePreview from "./components/CodePreview";
-import { ThemeContext } from "@/app/contexts";
-import TabSwitch from "@/app/lib/components/Tab-Switch";
+import { useState } from "react";
+import CodePreview from "./components/code-preview";
+import TabSwitch from "@/app/lib/components/tab-switch";
 export default function Accordion(){
 const [preview, setPreview] = useState(true)
     return (

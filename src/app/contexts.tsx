@@ -1,6 +1,6 @@
 'use client'
 import { createContext, useEffect, useState } from 'react'
-import { create, getThemeCookie } from './utils/cookies';
+import { create } from './utils/cookies';
 
 type ThemeContextType = {
     theme: string;

@@ -1,7 +1,7 @@
 'use client'
 import Link from "next/link"
-import ThemeToggle from "./components/Theme-Toggle";
-import Logo from "./components/Logo";
+import ThemeToggle from "./components/theme-toggle";
+import Logo from "./components/logo";
 import { useContext, useState } from "react";
 import { MobileMenuContext } from "../contexts";
 

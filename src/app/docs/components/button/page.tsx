@@ -1,9 +1,9 @@
 'use client'
-import Pathway from "@/app/lib/components/Pathway"
-import Button from "./components/Button"
-import CodePreview from "./components/CodePreview"
+import Pathway from "@/app/lib/components/pathway"
+import Button from "./components/button"
+import CodePreview from "./components/code-preview"
 import { useState } from "react"
-import TabSwitch from "@/app/lib/components/Tab-Switch"
+import TabSwitch from "@/app/lib/components/tab-switch"
 
 export default function Carousel(){
 const [preview, setPreview] = useState(true)

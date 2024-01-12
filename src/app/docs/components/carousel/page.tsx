@@ -1,5 +1,5 @@
 'use client'
-import Pathway from "@/app/lib/components/Pathway"
+import Pathway from "@/app/lib/components/pathway"
 
 export default function Carousel(){
 

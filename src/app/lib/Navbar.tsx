@@ -24,7 +24,7 @@ const {handleMobileMenuChange} = useContext(MobileMenuContext);
                                         className="hover:text-slate-900 hover:font-medium">
                                         <button>Components</button>
                                 </Link>
-                                <Link href="https://drive.google.com/file/d/1Gx0W3dOvNnNdN8SYTSm6mJ4W3NaNjtxc/view?usp=sharing"
+                                <Link href="https://drive.google.com/file/d/17XuBeNfff9zWEsAXi4-mP7ilzwrYERwS/view?usp=sharing"
                                         target="_blank" 
                                         className="hover:text-slate-900 hover:font-medium">
                                         <button 

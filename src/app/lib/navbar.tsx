@@ -33,7 +33,7 @@ const {handleMobileMenuChange} = useContext(MobileMenuContext);
                                             <span className="absolute -top-1 -right-4 -rotate-45 text-sm ">{'->'}</span>
                                         </button>
                                 </Link>
-                                <Link href="https://github.com/phscloq" 
+                                <Link href="https://github.com/phscloq/ui-library" 
                                         target="_blank"
                                         className="hover:text-slate-900 hover:font-medium">
                                         <button>GitHub</button>

@@ -184,6 +184,17 @@ export function LeftMenuBar(){
                         Switch
                     </button>
                 </Link>
+                <Link  
+                    className={`${pathname === "/docs/components/form" ? 'text-black' : '' }
+                    ${pathname === "/docs/components/form"
+                    && 
+                    (theme === 'dark' || theme === 'system') ? 'text-sky-500' : ''}
+                    `} 
+                    href="/docs/components/form">
+                    <button>
+                        Form
+                    </button>
+                </Link>
 
 
             </div>

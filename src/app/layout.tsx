@@ -22,8 +22,8 @@ const theme = cookies().get('theme')?.value;
   return (
     <html lang="en">        
       <body 
-      className={`${poppins.className}
-      flex`}>
+      className={`${poppins.className} ${theme === 'dark' ? 'dark' : 'light'}
+     `}>
         <ThemeContextProvider
         value={theme}
         >

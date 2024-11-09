@@ -14,21 +14,21 @@ interface Props{
 export default function Main({children}:Props){
     const {theme} = useContext(ThemeContext);
     return (
-        <div className={` sm:flex h-screen w-full
-        ${theme==='light' ? ' bg-white' : 'bg-slate-700 text-stone-100'}
+        <div className={` bg-white  dark:text-stone-100 dark:bg-slate-700
+        ${theme==='light' ? '' : ' '}
         `
         }>
-            <LeftNavbar theme={theme}/>
-            <LeftMenuBar />
-            <div className='flex flex-col w-full max-h-[820px]'>
+            
             <Navbar theme={theme} />
-            <Hamburger />
-            <main className="p-8
-            font-light  leading-8
+            <div className='w-full flex '>
+            <LeftNavbar theme={theme} />
+            <main className="  py-24 px-8
+            font-light  leading-8 text-black dark:text-stone-100 
             lg:w-3/5
-            max-h-screen overflow-y-auto
+            min-h-screen overflow-y-auto
             "
             >
+
                 {children}
             </main>
              </div>

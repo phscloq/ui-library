@@ -15,13 +15,18 @@ export default function LeftNavbar({theme}:{theme:string}){
             href: '/docs/components/button'
         },
         {
-            title: 'Switch',
-            href: '/docs/components/switch'
+            title: 'Dialog',
+            href: '/docs/components/dialog'
         },
         {
             title: 'Form',
             href: '/docs/components/form'
-        }
+        },
+        {
+            title: 'Switch',
+            href: '/docs/components/switch'
+        },
+       
     ]
 
     useEffect(()=>{

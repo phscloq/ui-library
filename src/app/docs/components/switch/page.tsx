@@ -1,11 +1,23 @@
 'use client'
 import Pathway from "@/app/lib/components/pathway"
-import CodePreview from "./components/code-preview"
 import { useState } from "react"
 import SwitchComponent from "./components/switch"
 import TabSwitch from "@/app/lib/components/tab-switch"
+import CodePreview from "@/app/lib/components/code-preview"
 
 export default function Switch(){
+const code = `<label
+className="bg-slate-300 has-[:checked]:bg-black 
+relative w-16 h-8 rounded-full
+transition-all duration-200">   
+    <input type="checkbox" id="holidaymode" 
+    className="sr-only peer" />
+    <span className="w-2/5  h-4/5  bg-slate-50 absolute
+        rounded-full left-1 top-[3px] 
+        peer-checked:left-[35px]
+        transition-all duration-200">
+    </span>
+</label>`;
 const [preview, setPreview] = useState(true)
     return (
         <div className="">
@@ -19,7 +31,7 @@ const [preview, setPreview] = useState(true)
             <div>
                 <TabSwitch preview={preview} setPreview={setPreview} />
                 
-                {preview ? <SwitchComponent /> :  <CodePreview />}
+                {preview ? <SwitchComponent /> :  <CodePreview>{code}</CodePreview>}
             </div>
             
             

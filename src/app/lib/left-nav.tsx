@@ -1,7 +1,8 @@
 'use client'
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { use, useEffect } from "react";
+import { title } from "process";
+import { useEffect } from "react";
 
 export default function LeftNavbar({theme}:{theme:string}){
 
@@ -11,8 +12,21 @@ export default function LeftNavbar({theme}:{theme:string}){
             href: '/docs/components/accordion'
         },
         {
+            title: 'Alert',
+            href: '/docs/components/alert'
+        },
+    
+        {
             title: 'Button',
             href: '/docs/components/button'
+        },
+        {
+            title: 'Card',
+            href: '/docs/components/card'
+        },
+        {
+            title: 'Checkbox',
+            href: '/docs/components/checkbox'
         },
         {
             title: 'Dialog',
@@ -21,6 +35,10 @@ export default function LeftNavbar({theme}:{theme:string}){
         {
             title: 'Form',
             href: '/docs/components/form'
+        },
+        {
+            title: 'ProgressBar',
+            href: '/docs/components/progress-bar'
         },
         {
             title: 'Switch',

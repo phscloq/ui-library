@@ -1,33 +1,80 @@
-import React from 'react';
-import { useState } from 'react';
+'use state'
 
-interface Props {
+import { useEffect, useState } from "react";
+interface DialogProps {
   isOpen: boolean;
   onClose: () => void;
+  children: React.ReactNode;
 }
+export function DialogComponent({ isOpen, onClose, children }: DialogProps){
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'; // Disable scroll
+    } else {
+      document.body.style.overflow = ''; // Enable scroll
+    }
+    return () => {
+      document.body.style.overflow = ''; // Cleanup on unmount
+    };
+  }, [isOpen]);
 
-const Dialog = ({ isOpen, onClose }: Props) => {
-  const [showDialog, setShowDialog] = useState(isOpen);
-
-  const handleClose = () => {
-    setShowDialog(false);
-    onClose();
-  };
-
+  if (!isOpen) return null; // Don't render if not open
+  
   return (
     <>
-      {showDialog && (
-        <div className="fixed z-10 flex items-center justify-center h-screen w-full md:h-auto md:w-64 bg-white shadow-xl">
-          <div className="bg-white py-2 px-3 sm:px-6 lg:px-8 rounded-tls border border-solid border-gray-300">
-            <p>Hello world!</p>
-          </div>
-          <button onClick={handleClose} className="text-sm text-gray-700 hover:text-gray-900">
-            Close
-          </button>
-        </div>
-      )}
-    </>
-  );
-};
+    {/* Background overlay */}
+    <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md z-40"/>
+    {/* Dialog content */}
+    <div className="fixed inset-0 flex items-center justify-center z-50 px-6"
+     onClick={onClose}>
+      <div className="bg-slate-100 dark:bg-slate-800 rounded-md p-8 max-w-lg w-full relative"
+      onClick={(e)=>e.stopPropagation()} // Prevent closing when clicking the content
+      >
+        {/* Close button */}
+        <button className="absolute top-2 right-2 text-gray-600" onClick={onClose}>
+          &times;
+        </button>
+        {/* Modal content */}
+        {children}
+      </div>
+    </div>
+  </>
+  )
+}
 
-export default Dialog;
+export function DialogTrigger(){
+  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal
+  const openDialog = () => {
+    setIsModalOpen(true);
+  };
+
+  // Close modal
+  const onClose = () => {
+    console.log('close modal')
+    setIsModalOpen(false)
+    console.log(isModalOpen)
+  };
+
+  return(
+  <>
+    <div className="w-full bg-slate-400 h-[400px] flex gap-2 justify-center items-center
+    rounded-md">
+      <button
+      className="bg-slate-200 text-black px-3 py-1 rounded-md 
+      hover:bg-slate-300  active:bg-slate-500 active:text-slate-100
+      "
+      onClick={openDialog}
+      >
+        Click me
+      </button> 
+    </div>
+
+    <DialogComponent isOpen={isModalOpen} onClose={onClose}>
+      <div className="text-center">
+        <h2 className="text-lg font-semibold mb-4">Modal Title</h2>
+        <p className="text-gray-600 dark:text-slate-300">This is a modal dialog. Click outside to close.</p>
+      </div>
+    </DialogComponent>
+  </>
+  )
+}

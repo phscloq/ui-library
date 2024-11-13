@@ -6,6 +6,7 @@ import LeftNavbar from "../left-nav";
 import MobileMenuPopOut, { LeftMenuBar } from "../mobile-menus";
 import Navbar from "../navbar";
 import Hamburger from "./hamburger";
+import CookieAlert from "./cookie-alert";
 
 interface Props{
     children: React.ReactNode
@@ -33,6 +34,7 @@ export default function Main({children}:Props){
             </main>
              </div>
         <MobileMenuPopOut />
+        <CookieAlert />
         </div>
     )
 }

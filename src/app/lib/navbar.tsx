@@ -10,15 +10,15 @@ export default function Navbar({theme}:Props){
 const {handleMobileMenuChange} = useContext(MobileMenuContext);
     return(
         <nav className={`bg-opacity-75 sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3
-          fixed top-0 z-40 w-full backdrop-blur  p-2  h-16 
-                ${theme==='light'? '':'border-slate-800'} border-b`}>
+          fixed top-0 z-40 w-full backdrop-blur  p-2  h-16 dark:border-slate-800
+                border-b`}>
                 <div className=
-                {`${theme === 'light'? '':'text-stone-100'}
+                {`dark:text-stone-100
                 sm:flex   gap-14 text-gray-400 sm:items-center`}>
                            <div className="hidden sm:flex gap-14  items-center">
                                 <Link href="/"
                                         className={`text-xl  tracking-wide text-black
-                                        ${theme === 'light'? '':'text-stone-100'}`} >
+                                        dark:text-stone-100`} >
                                         <h1 className="px-10" >Baran UI</h1>
                                 </Link>
                                 <Link href="/docs" 

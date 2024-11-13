@@ -53,8 +53,8 @@ export default function LeftNavbar({theme}:{theme:string}){
     })
     const pathname = usePathname();
     return (
-        <aside className={`${theme === 'light' ? '':'border-slate-800'}
-         hidden lg:block py-24 px-8
+        <aside className={`
+         hidden lg:block py-24 px-8 dark:border-slate-800
         left-0  border-r top-0 h-screen sticky  sm:w-1/6 flex-shrink-0 `}>
            
            
@@ -63,12 +63,12 @@ export default function LeftNavbar({theme}:{theme:string}){
             <div 
             className={`
             absolute flex flex-col text-gray-400
-            overflow-y-auto gap-4
-            ${theme === 'light' ? '':'text-stone-300'}
+            overflow-y-auto gap-4 dark:text-stone-300
+            
             `}>
                 <h4 
                     className={`text-black
-                    ${theme === 'light'? '':'text-stone-100'}
+                    dark:text-stone-100
                     `}>
                     Getting Started
                 </h4>
@@ -84,7 +84,7 @@ export default function LeftNavbar({theme}:{theme:string}){
 
                 <h4 
                     className={`text-black
-                    ${theme === 'light'? '':'text-stone-100'}
+                    dark:text-stone-100
                     `}>
                         Components
                 </h4>

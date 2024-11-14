@@ -2,6 +2,7 @@ import Link from "next/link"
 import ThemeToggle from "./theme-toggle";
 import Logo from "../logo";
 import MobileMenuTriggerThreeDots from "./mobile-menu-trigger";
+import { ArrowUpRight, Github } from "lucide-react";
 
 type Props = {theme: string}
 export default function Navbar({theme}:Props){
@@ -21,26 +22,28 @@ export default function Navbar({theme}:Props){
                                         <h1 className="px-10" >Baran UI</h1>
                                 </Link>
                                 <Link href="/docs" 
-                                        className="hover:text-slate-900 hover:font-medium ml-8">
+                                        className="hover:text-sky-500 ml-8">
                                         <button>Documentation</button>
                                 </Link>
                                 <Link href="/components" 
-                                        className="hover:text-slate-900 hover:font-medium">
+                                        className="hover:text-sky-500">
                                         <button>Components</button>
                                 </Link>
-                                <Link href="https://drive.google.com/file/d/17XuBeNfff9zWEsAXi4-mP7ilzwrYERwS/view?usp=sharing"
+                                <Link href="https://drive.google.com/file/d/15m1zApLUoG5s5zgnfDEyYt10FjmeTIK-/view?usp=sharing"
                                         target="_blank" 
-                                        className="hover:text-slate-900 hover:font-medium">
+                                        className=" hover:text-sky-500 ">
                                         <button 
-                                            className=" inline-block relative">
+                                            className=" inline-block relative  ">
                                             Resume 
-                                            <span className="absolute -top-1 -right-4 -rotate-45 text-sm ">{'->'}</span>
+                                            <ArrowUpRight className="absolute -top-1 -right-5 h-5 w-5   " />
                                         </button>
                                 </Link>
                                 <Link href="https://github.com/phscloq/ui-library" 
                                         target="_blank"
-                                        className="hover:text-slate-900 hover:font-medium">
-                                        <button>GitHub</button>
+                                        className="hover:text-sky-500">
+                                        <button className="flex">
+                                        <Github className="h-5 w-5 mr-1" />
+                                        GitHub</button>
                                 </Link>
                                 <ThemeToggle />
                            </div>

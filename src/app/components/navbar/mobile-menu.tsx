@@ -11,7 +11,7 @@ export function MobileMenu(){
     return(
                 <DialogComponent>
                     <div className="flex flex-col ">
-                        <ul className=" space-y-6">
+                        <ul className=" space-y-6 text-black dark:text-white">
                             <li className="hover:text-slate-900 hover:font-medium">
                                 <Link href="/docs" >
                                     <button
@@ -49,9 +49,7 @@ export function MobileMenu(){
                         <div className="flex justify-between items-center">
                             <label className={`${theme ==='light'? 'text-slate-500':'text-slate-300'}`}>Switch theme</label>
                             <div className={`relative  p-2`}>
-                                <select className={`rounded-md w-28 h-10  font-medium shadow-md
-                                ${theme === 'light' ? 'bg-slate-200 ' : 'bg-slate-500'}
-                                `}
+                                <select className={`rounded-md w-28 h-10  font-medium shadow-md text-black dark:text-white bg-slate-200 dark:bg-slate-500`}
                                 onChange={(e)=>{handleThemeChange(e.target.value); }}
                                 defaultValue={theme}
                                 >

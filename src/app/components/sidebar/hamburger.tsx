@@ -10,7 +10,7 @@ export default function Hamburger(){
         w-full  p-3 border-b sticky  top-16 backdrop-blur z-40 lg:hidden`} >
                                         <div className="pl-6 flex">
                                             <button
-                                            onClick={()=>handleLeftNavChange()}
+                                            onClick={()=>handleLeftNavChange(true)}
                                             >
                                                 <svg
                                                     width={24} height={24}        

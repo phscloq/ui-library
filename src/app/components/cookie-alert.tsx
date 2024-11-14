@@ -8,7 +8,7 @@ export default function CookieAlert (){
     } */
 
     return(
-        <div className={`sticky bottom-4 left-4  px-4 max-w-lg  flex
+        <div className={`fixed bottom-4 left-4  px-4 max-w-lg  flex
         ${dismiss ? 'hidden' : ' '}
         `}>
             <div className="px-6 py-3 bg-white flex items-center  shadow-md dark:bg-slate-600 border dark:border-white rounded-md">

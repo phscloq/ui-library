@@ -1,11 +1,12 @@
 'use client'
+import { MobileMenuContext } from "@/app/contexts";
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { title } from "process";
-import { useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 
 export default function LeftNavbar({theme}:{theme:string}){
-
+    const {sideBarOpen, handleLeftNavChange} = useContext(MobileMenuContext);
     const components = [
         {
             title: 'Accordion',
@@ -47,63 +48,81 @@ export default function LeftNavbar({theme}:{theme:string}){
        
     ]
 
-    useEffect(()=>{
-        console.log("Left Navbar rerendered")
-        console.log(theme)
-    })
+    useEffect(() => {
+        if (sideBarOpen) {
+          document.body.style.overflow = 'hidden'; // Disable scroll
+        } else {
+          document.body.style.overflow = ''; // Enable scroll
+        }
+        return () => {
+          document.body.style.overflow = ''; // Cleanup on unmount
+        };
+      }, [sideBarOpen]);
     const pathname = usePathname();
     return (
-        <aside className={`
-         hidden lg:block py-24 px-8 dark:border-slate-800
-        left-0  border-r top-0 h-screen sticky  sm:w-1/6 flex-shrink-0 `}>
-           
-           
-            
-            {/* Left Side Navbar List */}
-            <div 
-            className={`
-            absolute flex flex-col text-gray-400
-            overflow-y-auto gap-4 dark:text-stone-300
-            
-            `}>
-                <h4 
-                    className={`text-black
-                    dark:text-stone-100
-                    `}>
-                    Getting Started
-                </h4>
-                <Link 
-                    className={`${pathname === "/docs" ? 'text-black' : '' }
-                    ${pathname === '/docs' && (theme === 'dark' || theme === 'system')? 'text-sky-500' : ''}
-                    `} 
-                    href="/docs">
-                    <button>
-                        Introduction
-                    </button>
-                </Link>
+        <>
+        <div className={`${sideBarOpen ? 'block': 'hidden'} fixed lg:hidden inset-0 bg-black bg-opacity-50 backdrop-blur-lg:z-40`}
+                onClick={()=>handleLeftNavChange(false)}
 
-                <h4 
-                    className={`text-black
-                    dark:text-stone-100
-                    `}>
-                        Components
-                </h4>
-                {components.map((component, index)=>{
-                    return(
-                        <Link
-                            key={index} 
-                            className={`${pathname === component.href 
-                            && 'text-black dark:text-blue-500' }
-                            `} 
-                            href={component.href}>
-                            <button>
-                                {component.title}
-                            </button>
-                        </Link>
-                    )
-                })}
+        />
+        <aside className={`z-50 sm:z-0 ${sideBarOpen ? 'w-4/5':''}
+        left-0  top-0  h-screen sticky  lg:w-1/6  flex-shrink-0`}
+        >
+            {/* Left Side Navbar List */}
+            <div className={` bg-white dark:bg-slate-600 dark:shadow-slate-800 border-r dark:border-slate-800  py-24 px-8 
+                 ${sideBarOpen ? 'block': 'hidden'} lg:block  h-screen`}
+                 onClick={(e)=>e.stopPropagation()}
+                 >
+               
+
+                <div 
+                className={`
+                absolute flex flex-col text-gray-400
+                overflow-y-auto gap-4 dark:text-stone-300
+                
+                `}>
+                    <h4 
+                        className={`text-black
+                        dark:text-stone-100
+                        `}>
+                        Getting Started
+                    </h4>
+                    <Link 
+                        className={`${pathname === "/docs" ? 'text-black' : '' }
+                        ${pathname === '/docs' && (theme === 'dark' || theme === 'system')? 'text-sky-500' : ''}
+                        `} 
+                        href="/docs">
+                        <button>
+                            Introduction
+                        </button>
+                    </Link>
+
+                    <h4 
+                        className={`text-black
+                        dark:text-stone-100
+                        `}>
+                            Components
+                    </h4>
+                    {components.map((component, index)=>{
+                        return(
+                            <Link
+                                key={index} 
+                                className={`${pathname === component.href 
+                                && 'text-black dark:text-blue-500' }
+                                `} 
+                                href={component.href}>
+                                <button
+                                onClick={()=>handleLeftNavChange(false)}
+                                >
+                                    {component.title}
+                                </button>
+                            </Link>
+                        )
+                    })}
+                </div>
             </div>
            
         </aside>
+        </>
     )
 }

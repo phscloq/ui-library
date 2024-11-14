@@ -5,7 +5,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { cookies } from 'next/headers';
 import { ThemeContextProvider, MobileMenuContextProvider } from './contexts';
-import Main from './lib/components/main';
+import Main from './components/main';
 
 export const metadata: Metadata = {
   title: 'Baran UI',

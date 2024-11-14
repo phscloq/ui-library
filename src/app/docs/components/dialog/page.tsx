@@ -1,9 +1,9 @@
 'use client'
 import React, { useState } from 'react';
 import { DialogTrigger } from './components/dialog';
-import Pathway from '@/app/lib/components/pathway';
-import TabSwitch from '@/app/lib/components/tab-switch';
-import CodePreview from '@/app/lib/components/code-preview';
+import Pathway from '@/app/components/pathway';
+import TabSwitch from '@/app/components/tab-switch';
+import CodePreview from '@/app/components/code-preview';
 
 export default function DialogPage() {
   const code = `

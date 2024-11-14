@@ -1,9 +1,9 @@
 'use client'
-import Pathway from "@/app/lib/components/pathway"
+import Pathway from "@/app/components/pathway"
 import { useState } from "react"
 import FormComponent from "./components/form"
-import TabSwitch from "@/app/lib/components/tab-switch"
-import CodePreview from "@/app/lib/components/code-preview"
+import TabSwitch from "@/app/components/tab-switch"
+import CodePreview from "@/app/components/code-preview"
 
 export default function Switch(){
 const code = `<div className=' min-h-[100dvh]  bg-slate-900 flex flex-col justify-center items-center'>

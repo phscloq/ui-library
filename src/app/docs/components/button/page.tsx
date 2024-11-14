@@ -1,9 +1,9 @@
 'use client'
 import Button from "./components/button"
 import { useState } from "react"
-import TabSwitch from "@/app/lib/components/tab-switch"
-import Pathway from "@/app/lib/components/pathway"
-import CodePreview from "@/app/lib/components/code-preview"
+import TabSwitch from "@/app/components/tab-switch"
+import Pathway from "@/app/components/pathway"
+import CodePreview from "@/app/components/code-preview"
 
 export default function ButtonPage(){
   const code = `

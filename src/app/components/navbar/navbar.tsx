@@ -1,16 +1,15 @@
-'use client'
 import Link from "next/link"
-import ThemeToggle from "./components/theme-toggle";
-import Logo from "./components/logo";
-import { useContext, useState } from "react";
-import { MobileMenuContext } from "../contexts";
+import ThemeToggle from "./theme-toggle";
+import Logo from "../logo";
+import MobileMenuTriggerThreeDots from "./mobile-menu-trigger";
 
 type Props = {theme: string}
 export default function Navbar({theme}:Props){
-const {handleMobileMenuChange} = useContext(MobileMenuContext);
+       
+      
     return(
         <nav className={`bg-opacity-75 sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3
-          fixed top-0 z-40 w-full backdrop-blur  p-2  h-16 dark:border-slate-800
+          fixed top-0 z-30 w-full backdrop-blur  p-2  h-16 dark:border-slate-800
                 border-b`}>
                 <div className=
                 {`dark:text-stone-100
@@ -54,12 +53,7 @@ const {handleMobileMenuChange} = useContext(MobileMenuContext);
                 <div className="flex flex-col  pt-2 sm:w-full sm:hidden">
                                 <div className="w-full flex items-center justify-between">
                                         <Logo />
-                                        <button className="text-slate-500 w-8 h-8 flex items-center justify-center hover:text-slate-600"
-                                        onClick={()=>handleMobileMenuChange()}
-                                        >
-                                        <span className=" sr-only">Navigation</span>
-                                        &#10247;
-                                        </button>
+                                        <MobileMenuTriggerThreeDots />
                                 </div>
                                 
                                 

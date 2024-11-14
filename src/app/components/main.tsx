@@ -2,11 +2,11 @@
 
 import {ThemeContext } from "@/app/contexts";
 import { useContext } from "react";
-import LeftNavbar from "../left-nav";
-import MobileMenuPopOut, { LeftMenuBar } from "../mobile-menus";
-import Navbar from "../navbar";
-import Hamburger from "./hamburger";
+import LeftNavbar from "./sidebar/left-nav";
+import Navbar from "./navbar/navbar";
+import Hamburger from "./sidebar/hamburger";
 import CookieAlert from "./cookie-alert";
+import { MobileMenu } from "./navbar/mobile-menu";
 
 interface Props{
     children: React.ReactNode
@@ -33,7 +33,7 @@ export default function Main({children}:Props){
                 {children}
             </main>
              </div>
-        <MobileMenuPopOut />
+             <MobileMenu />
         <CookieAlert />
         </div>
     )

@@ -1,8 +1,9 @@
 import Link from "next/link"
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { MobileMenuContext, ThemeContext } from "../contexts";
 import { usePathname } from "next/navigation";
-
+import { DialogComponent } from "./navbar/dialog";
+/* 
 export default function MobileMenuPopOut(){
     const {mobileMenuOpen, handleMobileMenuChange} = useContext(MobileMenuContext);
     const {theme, handleThemeChange} = useContext(ThemeContext);
@@ -80,7 +81,7 @@ export default function MobileMenuPopOut(){
             </div>
         </div>
     )
-}
+} */
 
 export function LeftMenuBar(){
     const {theme} = useContext(ThemeContext);
@@ -203,3 +204,4 @@ export function LeftMenuBar(){
     </div>
     )
 }
+

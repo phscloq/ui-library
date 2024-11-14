@@ -18,7 +18,6 @@ export const ThemeContext = createContext<ThemeContextType>({
 });
 export function ThemeContextProvider({ children, value }: ThemeContextProviderProps) {
     const [theme, setTheme] = useState<string>(value ? value : 'light'); 
-    
     useEffect(() => {// Check for system preferences
        
         // Listen for changes in system preferences
@@ -38,14 +37,12 @@ export function ThemeContextProvider({ children, value }: ThemeContextProviderPr
     
     
     const checkSystemPreferences = () => {
-       
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            
-                setTheme('dark');
-                create('system')
+                setTheme('system');
+                create('dark')
             } else {
-                setTheme('light');
-                create('system')
+                setTheme('system');
+                create('light')
             }
         
 

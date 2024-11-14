@@ -14,7 +14,7 @@ export default function AlertComponent(){
                     </div>
                     <div>
                         <p className=" text-gray-600 dark:text-slate-300">
-                            You've successfully completed the task.
+                            You&apos;ve successfully completed the task.
                         </p>
                     </div>
                     
@@ -31,7 +31,7 @@ export default function AlertComponent(){
                     </div>
                     <div>
                         <p className=" text-gray-600 dark:text-slate-300">
-                            You've gained 1 point.
+                            You&apos;ve gained 1 point.
                         </p>
                     </div>
                     

@@ -61,15 +61,17 @@ export default function LeftNavbar({theme}:{theme:string}){
     const pathname = usePathname();
     return (
         <>
-        <div className={`${sideBarOpen ? 'block': 'hidden'} fixed lg:hidden inset-0 bg-black bg-opacity-50 backdrop-blur-lg:z-40`}
+        <div className={`${sideBarOpen ? 'block': 'hidden'} fixed lg:hidden inset-0 bg-black bg-opacity-50
+        backdrop-blur-lg z-30`}
                 onClick={()=>handleLeftNavChange(false)}
 
         />
-        <aside className={`z-50 sm:z-0 ${sideBarOpen ? 'w-4/5':''}
-        left-0  top-0  h-screen sticky  lg:w-1/6  flex-shrink-0`}
+        <aside className={`z-30 sm:z-0 ${sideBarOpen ? 'w-4/5':''}
+        left-0  top-0  h-screen sticky  lg:w-1/6  flex-shrink-0 transition-transform duration-300 ease-in-out`}
         >
             {/* Left Side Navbar List */}
-            <div className={` bg-white dark:bg-slate-600 dark:shadow-slate-800 border-r dark:border-slate-800  py-24 px-8 
+            <div className={`bg-slate-200 lg:bg-white dark:bg-slate-700  border-r dark:border-slate-800  py-24 px-8 
+               transition-transform duration-300 ease-in-out
                  ${sideBarOpen ? 'block': 'hidden'} lg:block  h-screen`}
                  onClick={(e)=>e.stopPropagation()}
                  >

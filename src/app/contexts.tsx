@@ -76,16 +76,16 @@ export function ThemeContextProvider({ children, value }: ThemeContextProviderPr
 // Mobil Menu Context
 export const MobileMenuContext = createContext({
     mobileMenuOpen: false,
-    leftNavOpen: false,
-    handleLeftNavChange: () => {},
+    sideBarOpen: false,
+    handleLeftNavChange: (value:boolean) => {},
     onCloseMobileNavMenu: () => {},
     openMobileNavMenu: () => {},
 });
 export function MobileMenuContextProvider({ children }: {children:React.ReactNode}) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [leftNavOpen, setLeftNavOpen] = useState(false);
-    const handleLeftNavChange = () => {
-        setLeftNavOpen(!leftNavOpen);
+    const [sideBarOpen, setSideBarOpen] = useState(false);
+    const handleLeftNavChange = (value:boolean) => {
+        setSideBarOpen(value);
     };
 
     const openMobileNavMenu = () => {
@@ -97,7 +97,7 @@ export function MobileMenuContextProvider({ children }: {children:React.ReactNod
 
     return (
         <MobileMenuContext.Provider 
-        value={{mobileMenuOpen, openMobileNavMenu, onCloseMobileNavMenu, leftNavOpen, handleLeftNavChange}}>
+        value={{mobileMenuOpen, openMobileNavMenu, onCloseMobileNavMenu, sideBarOpen, handleLeftNavChange}}>
             {children}
         </MobileMenuContext.Provider>
     )

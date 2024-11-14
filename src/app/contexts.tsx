@@ -1,6 +1,7 @@
 'use client'
 import { createContext, useEffect, useState } from 'react'
 import { create } from './utils/cookies';
+import { on } from 'events';
 
 type ThemeContextType = {
     theme: string;
@@ -76,21 +77,27 @@ export function ThemeContextProvider({ children, value }: ThemeContextProviderPr
 export const MobileMenuContext = createContext({
     mobileMenuOpen: false,
     leftNavOpen: false,
-    handleMobileMenuChange: () => {},
     handleLeftNavChange: () => {},
+    onCloseMobileNavMenu: () => {},
+    openMobileNavMenu: () => {},
 });
 export function MobileMenuContextProvider({ children }: {children:React.ReactNode}) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [leftNavOpen, setLeftNavOpen] = useState(false);
-    const handleMobileMenuChange = () => {
-        setMobileMenuOpen(!mobileMenuOpen);
-    };
     const handleLeftNavChange = () => {
         setLeftNavOpen(!leftNavOpen);
     };
+
+    const openMobileNavMenu = () => {
+        setMobileMenuOpen(true);
+      };
+        const onCloseMobileNavMenu = () => {
+        setMobileMenuOpen(false)
+      };
+
     return (
         <MobileMenuContext.Provider 
-        value={{mobileMenuOpen, handleMobileMenuChange, leftNavOpen, handleLeftNavChange}}>
+        value={{mobileMenuOpen, openMobileNavMenu, onCloseMobileNavMenu, leftNavOpen, handleLeftNavChange}}>
             {children}
         </MobileMenuContext.Provider>
     )

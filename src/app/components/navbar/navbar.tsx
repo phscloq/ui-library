@@ -15,14 +15,14 @@ export default function Navbar({theme}:Props){
                 <div className=
                 {`dark:text-stone-100
                 sm:flex   gap-14 text-gray-400 sm:items-center`}>
-                           <div className="hidden sm:flex gap-14  items-center">
+                           <div className="hidden sm:flex gap-8  items-center">
                                 <Link href="/"
-                                        className={`text-xl  tracking-wide text-black
+                                        className={`text-xl  tracking-wide text-black w-fit
                                         dark:text-stone-100`} >
-                                        <h1 className="px-10" >Baran UI</h1>
+                                        <h1 className="lg:px-10" >Baran UI</h1>
                                 </Link>
                                 <Link href="/docs" 
-                                        className="hover:text-sky-500 ml-8">
+                                        className="hover:text-sky-500 ">
                                         <button>Documentation</button>
                                 </Link>
                                 <Link href="/components" 
@@ -40,7 +40,7 @@ export default function Navbar({theme}:Props){
                                 </Link>
                                 <Link href="https://github.com/phscloq/ui-library" 
                                         target="_blank"
-                                        className="hover:text-sky-500">
+                                        className="hover:text-sky-500 ml-2">
                                         <button className="flex">
                                         <Github className="h-5 w-5 mr-1" />
                                         GitHub</button>

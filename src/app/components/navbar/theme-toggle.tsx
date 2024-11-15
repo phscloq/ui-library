@@ -22,8 +22,8 @@ export default function ThemeToggle(){
                 >
             </input>
             <span 
-                className="w-2/6  h-4/5 bg-rose-300 absolute
-                rounded-full left-1 top-1 peer-checked:bg-rose-600
+                className="w-2/6  h-4/5 bg-slate-400 absolute
+                rounded-full left-1 top-1 peer-checked:bg-slate-700
                 peer-checked:left-12
                 transition-all duration-300
                 "

@@ -4,6 +4,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { title } from "process";
 import { useContext, useEffect, useState } from "react";
+import SidebarTrigger from "./sidebar-trigger";
 
 export default function LeftNavbar({theme}:{theme:string}){
     const {sideBarOpen, handleLeftNavChange} = useContext(MobileMenuContext);
@@ -66,7 +67,7 @@ export default function LeftNavbar({theme}:{theme:string}){
                 onClick={()=>handleLeftNavChange(false)}
 
         />
-        <aside className={`z-30 sm:z-0 ${sideBarOpen ? 'w-4/5':''}
+        <aside className={`z-30 lg:z-0 ${sideBarOpen ? ' w-64 ':''}
         left-0  top-0  h-screen sticky  lg:w-1/6  flex-shrink-0 transition-transform duration-300 ease-in-out`}
         >
             {/* Left Side Navbar List */}
@@ -125,6 +126,7 @@ export default function LeftNavbar({theme}:{theme:string}){
             </div>
            
         </aside>
+        <SidebarTrigger />
         </>
     )
 }

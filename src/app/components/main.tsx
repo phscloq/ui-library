@@ -24,7 +24,6 @@ export default function Main({children}:Props){
             <Navbar theme={theme} />
             <div className='w-full flex '>
             <LeftNavbar theme={theme} />
-            <SidebarTrigger />
             <main className="  py-24 px-8
             font-light  leading-8 text-black dark:text-stone-100 
             lg:w-3/5

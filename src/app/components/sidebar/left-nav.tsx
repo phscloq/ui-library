@@ -17,7 +17,10 @@ export default function LeftNavbar({theme}:{theme:string}){
             title: 'Alert',
             href: '/docs/components/alert'
         },
-    
+        {
+            title: 'Badge',
+            href: '/docs/components/badge'
+        },
         {
             title: 'Button',
             href: '/docs/components/button'

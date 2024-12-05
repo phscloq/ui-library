@@ -31,15 +31,15 @@ export default function TabSwitch({preview, setPreview}:TabSwitchProps){
                     <button 
                     ref={el=>tabRefs.current[0] = el}
                     className={`
-                    ${preview ? '  ' : ' text-slate-400 dark:text-slate-400'}
-                    text-black   dark:text-white  transition-all  duration-200 ease-linear z-10
+                    ${preview ? ' text-white dark:text-white' : ' text-slate-400 dark:text-slate-400'}
+                        transition-all  duration-200 ease-linear z-10
                     
                     px-2 py-1  `}
                     onClick={()=>setPreview(true)}>Preview</button>
                     <button 
                     ref={el=>tabRefs.current[1] = el}
-                    className={`${!preview ? ' ' : ' text-slate-400 dark:text-slate-400'}
-                    text-black    dark:text-slate-200 transition-all duration-200 ease-linear z-10
+                    className={`${!preview ? 'text-white dark:text-white' : ' text-slate-400 dark:text-slate-400'}
+                       dark:text-slate-200 transition-all duration-200 ease-linear z-10
                     px-2 py-1 `}
                     onClick={()=>setPreview(false)}>Code</button>
         </div>

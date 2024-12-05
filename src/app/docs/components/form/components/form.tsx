@@ -36,7 +36,7 @@ export default function FormComponents(){
               
           </form>
           <div className='pl-6 py-2'>
-            <p className='text-sm hover:underline hover:cursor-pointer'>Don't have an account? Sign up</p>
+            <p className='text-sm hover:underline hover:cursor-pointer'>Don&apos;t have an account? Sign up</p>
           </div>
 
       </div>

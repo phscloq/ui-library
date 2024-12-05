@@ -7,19 +7,19 @@ import CardComponent from "./card"
 
 export default function CardPage(){
     const code = `
-    <div className="bg-white  shadow-md dark:bg-slate-600 border dark:border-white rounded-md ">
-            <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2
-                 text-gray-800 dark:text-black">
-                    Title
-                </h3>
-                <p className=" text-gray-600 dark:text-slate-300">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Sed sit amet lacus nec augue tincidunt ultricies. 
-                    Nullam nec mi nec n
-                </p>
-            </div>
-        </div>
+<div className="bg-white  shadow-md dark:bg-slate-600 border dark:border-white rounded-md ">
+    <div className="p-6">
+        <h3 className="text-xl font-semibold mb-2
+            text-gray-800 dark:text-black">
+            Title
+        </h3>
+        <p className=" text-gray-600 dark:text-stone-300 max-h-40  line-clamp-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Sed sit amet lacus nec augue tincidunt ultricies. 
+            Nullam nec mi nec n
+        </p>
+    </div>
+</div>
     `;
 
 

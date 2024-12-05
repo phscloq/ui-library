@@ -1,5 +1,6 @@
 'use client'
 
+import ComponentParent from "@/app/components/component-parent";
 import { useEffect, useState } from "react";
 interface DialogProps {
   isOpen: boolean;
@@ -57,18 +58,16 @@ export function DialogTrigger(){
 
   return(
   <>
-    <div className="w-full bg-slate-400 h-[400px] flex gap-2 justify-center items-center
-    rounded-md">
+    <ComponentParent>
       <button
-      className="bg-slate-200 text-black px-3 py-1 rounded-md 
+      className="bg-slate-200 dark:bg-slate-600 dark:text-white dark:hover:bg-slate-700 text-black px-3 py-1 rounded-md 
       hover:bg-slate-300  active:bg-slate-500 active:text-slate-100
       "
       onClick={openDialog}
       >
         Click me
       </button> 
-    </div>
-
+    </ComponentParent>
     <DialogComponent isOpen={isModalOpen} onClose={onClose}>
       <div className="text-center">
         <h2 className="text-lg font-semibold mb-4">Modal Title</h2>

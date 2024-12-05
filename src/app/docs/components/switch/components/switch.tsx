@@ -1,10 +1,10 @@
+import ComponentParent from "@/app/components/component-parent";
+
 export default function SwitchComponent(){
     return (
-        <div className="w-full bg-slate-400 h-[400px] flex gap-2 justify-center items-center
-             rounded-md
-            ">
+        <ComponentParent>
                 <label
-                className="bg-slate-300 has-[:checked]:bg-black 
+                className="bg-slate-400 has-[:checked]:bg-black 
                 relative w-16 h-8 rounded-full
                 transition-all duration-200
                 cursor-pointer
@@ -17,9 +17,8 @@ export default function SwitchComponent(){
                      transition-all duration-200"></span>
                 </label>
 
-                <label className="text-[21px] text-black font-normal"
+                <label className="text-[21px] text-white dark:text-black font-normal"
                  htmlFor="holidaymode">Holiday Mode</label>
                 
-            </div> 
-    )
+        </ComponentParent>)
 }

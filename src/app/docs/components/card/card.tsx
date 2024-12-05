@@ -1,8 +1,8 @@
+import ComponentParent from "@/app/components/component-parent";
+
 export default function CardComponent(){
     return(
-    <div className="w-full bg-slate-700 dark:bg-slate-300 h-[400px] flex gap-2 justify-center items-center p-4 sm:p-0
-        rounded-b-md
-       ">
+    <ComponentParent>
         <div className="bg-white max-w-md shadow-md dark:bg-slate-600 border dark:border-slate-700 rounded-md max-h-72 ">
             <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2
@@ -15,6 +15,6 @@ export default function CardComponent(){
                 </p>
             </div>
         </div>
-    </div>
+    </ComponentParent>
     )
 }

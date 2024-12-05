@@ -1,13 +1,12 @@
 'use client'
 
+import ComponentParent from "@/app/components/component-parent"
 import { useState } from "react"
 
 export default function CheckboxComponent(){
     const [checked, setChecked] = useState(false)
     return(
-        <div className="w-full bg-slate-400 h-[400px] flex gap-2 justify-center items-center
-        rounded-md
-       ">
+       <ComponentParent>
             <label className="relative inline-flex items-center cursor-pointer" 
             onClick={(e)=>e.stopPropagation()}>
                 <input
@@ -16,7 +15,7 @@ export default function CheckboxComponent(){
                 checked={checked}
                 onChange={()=>setChecked(!checked)}
                 />
-                <div className="w-6 h-6 border-2 border-gray-300 rounded-md
+                <div className="w-6 h-6 border-2 border-slate-300 dark:border-slate-700 rounded-md
                 peer-checked:bg-orange-500 peer-checked:border-orange-500 flex items-center
                 justify-center">
                     {checked && 
@@ -27,8 +26,7 @@ export default function CheckboxComponent(){
                         </svg>}
                 </div>
             </label>
-            <p className={`${checked ? 'font-semibold' : ''}`}>I love myself</p>
-        </div>
-    )
+            <p className={`text-white dark:text-black ${checked ? 'font-semibold' : ''}`}>I love myself</p>
+        </ComponentParent>)
 
 }

@@ -61,7 +61,7 @@ const [preview, setPreview] = useState(true)
                 {preview ? <FormComponent /> :  <CodePreview>{code}</CodePreview>}
             </div>
             <Tips>
-                <li>Add your login action to the button's formSubmit property.</li>
+                <li>Add your login action to the button&apos;s formSubmit property.</li>
                 <li>Add link path to the Link component.</li>
                 <li>You need to set the parent div css that form component will be in.</li>
             </Tips>

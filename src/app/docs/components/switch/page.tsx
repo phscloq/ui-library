@@ -1,7 +1,7 @@
 'use client'
 import Pathway from "@/app/components/pathway"
 import { useState } from "react"
-import SwitchComponent from "./components/switch"
+import SwitchComponent from "./switch"
 import TabSwitch from "@/app/components/tab-switch"
 import CodePreview from "@/app/components/code-preview"
 

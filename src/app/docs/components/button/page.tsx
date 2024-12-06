@@ -1,5 +1,5 @@
 'use client'
-import Button from "./components/button"
+import Button from "./button"
 import { useState } from "react"
 import TabSwitch from "@/app/components/tab-switch"
 import Pathway from "@/app/components/pathway"

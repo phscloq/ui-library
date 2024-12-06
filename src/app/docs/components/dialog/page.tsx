@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import { DialogTrigger } from './components/dialog';
+import { DialogTrigger } from './dialog';
 import Pathway from '@/app/components/pathway';
 import TabSwitch from '@/app/components/tab-switch';
 import CodePreview from '@/app/components/code-preview';

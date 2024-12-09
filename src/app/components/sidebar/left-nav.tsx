@@ -50,6 +50,10 @@ export default function LeftNavbar({theme}:{theme:string}){
             href: '/docs/components/switch'
         },
         {
+            title: 'Tabs',
+            href: '/docs/components/tabs'
+        },
+        {
             title: 'Tooltip',
             href: '/docs/components/tooltip'
         },

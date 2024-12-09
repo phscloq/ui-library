@@ -80,7 +80,7 @@ const [preview, setPreview] = useState(true)
                 <TabComponentDifferentStyle />
                 <h3 className="mt-6 font-medium text-lg ">How to Achieve?</h3>
                 <div className=" bg-slate-700 dark:bg-slate-300 w-3/4 text-white dark:text-black px-3 py-1">
-                    <p>You need to change the <span className=" text-blue-300 dark:text-blue-800 ">height</span> and that's it. </p>
+                    <p>You need to change the <span className=" text-blue-300 dark:text-blue-800 ">height</span> and that&apos;s it. </p>
                 </div>
                 
             </div>

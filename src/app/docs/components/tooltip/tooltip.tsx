@@ -8,7 +8,7 @@ return (
             {children}
             <div className=" absolute -top-1 left-0  bg-black text-white text-xs rounded-md p-2
             transform    -translate-x-[17px] -translate-y-full
-            whitespace-nowrap opacity-0 group-hover:opacity-100  transition-opacity duration-300
+            whitespace-nowrap opacity-0 group-hover:opacity-100  transition-opacity duration-300 pointer-events-none
             ">
                 {text}
             </div>

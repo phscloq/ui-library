@@ -5,9 +5,9 @@ import TabSwitch from "@/app/components/tab-switch"
 import CodePreview from "@/app/components/code-preview"
 import TooltipComponent from "./tooltip"
 export default function Tooltip(){
-const code = `<div className="relative inline-block">
+const code = `<div className="relative inline-block group">
             {children}
-            <div className="hidden bg-black text-white text-xs rounded-md p-1 absolute top-0 left-0 transform -translate-x-1/2 -translate-y-full">
+            <div className="hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap bg-black text-white text-xs rounded-md p-1 absolute top-0 left-0 transform -translate-x-1/2 -translate-y-full pointer-events-none">
                 {text}
             </div>
         </div>`;

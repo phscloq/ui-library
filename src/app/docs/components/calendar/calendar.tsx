@@ -58,7 +58,7 @@ export default function CalendarComponent(){
             ))}
             {calendarGrid.map((data, index) => {
                 return (
-                    <div 
+                    <div key={index}
                         className={`w-8 h-8 
                         rounded-full flex items-center justify-center
                         font-bold text-2xl relative group cursor-default z-20

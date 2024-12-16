@@ -26,6 +26,10 @@ export default function LeftNavbar({theme}:{theme:string}){
             href: '/docs/components/button'
         },
         {
+            title: 'Calendar',
+            href: '/docs/components/calendar'
+        },
+        {
             title: 'Card',
             href: '/docs/components/card'
         },

@@ -20,10 +20,11 @@ export default function RootLayout({
 const theme = cookies().get('theme')?.value;
 
   return (
-    <html lang="en">        
+    <html lang="en" className={`${theme === 'dark' ? 'dark' : 'light'}`}>        
       <body 
-      className={`${poppins.className} ${theme === 'dark' ? 'dark' : 'light'}
-     `}>
+      className={`${poppins.className} 
+        dark:bg-slate-700
+        `}>
         <ThemeContextProvider
         value={theme}
         >

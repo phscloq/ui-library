@@ -18,8 +18,6 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  height: 100vh;
-  width: 100vw;
 }
 .navbar {
   -webkit-backdrop-filter: blur(8px);

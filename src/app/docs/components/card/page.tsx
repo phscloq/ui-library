@@ -4,6 +4,7 @@ import Pathway from "@/app/components/pathway"
 import TabSwitch from "@/app/components/tab-switch"
 import { useState } from "react"
 import CardComponent from "./card"
+import Features from "@/app/components/features"
 
 export default function CardPage(){
     const code = `
@@ -31,13 +32,14 @@ export default function CardPage(){
             <h1 className="text-2xl mb-8">Card</h1>
             <div className="flex gap-1 mb-4">
                 <p className=" font-medium">Purpose:</p>
-                <p>The Switch component is a versatile and user-friendly element designed to facilitate toggling between two states in your web applications.</p>    
+                <p>The Card component is a versatile and user-friendly UI element designed to display grouped content in a visually appealing and structured format. It is commonly used for presenting information like user profiles, product details, or any data block that needs emphasis.</p>    
             </div>
             <div>
                 <TabSwitch preview={preview} setPreview={setPreview} />
                 
                 {preview ? <CardComponent /> :  <CodePreview>{code}</CodePreview>}
             </div>
+            
             
             
         </div>

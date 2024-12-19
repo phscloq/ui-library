@@ -9,7 +9,7 @@ export default function Navbar({theme}:Props){
        
       
     return(
-        <nav className={`bg-opacity-75 sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3
+        <nav className={`navbar bg-opacity-75 sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3
           fixed top-0 z-30 w-full backdrop-blur  p-2  h-16 dark:border-slate-800
                 border-b`}>
                 <div className=

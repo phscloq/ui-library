@@ -51,7 +51,7 @@ export function AccordionTriple(){
         setAccordionArr(newAccordionArr);
     };
     return(
-    <div className=" p-4 bg-gray-200 rounded-lg">
+    <div className=" p-4 bg-gray-200 rounded-b-lg">
         <div className="text-black">
             <div className=" mb-2 ">
                 <button className="w-full flex  justify-between" 

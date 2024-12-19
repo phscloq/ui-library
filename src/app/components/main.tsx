@@ -16,18 +16,15 @@ interface Props{
 export default function Main({children}:Props){
     const {theme} = useContext(ThemeContext);
     return (
-        <div className={` bg-white  dark:text-stone-100 dark:bg-slate-700
-        ${theme==='light' ? '' : ' '}
-        `
+        <div className={` bg-white  dark:text-stone-100 dark:bg-slate-700`
         }>
             
             <Navbar theme={theme} />
-            <div className='w-full flex '>
+            <div className=' flex '>
             <LeftNavbar theme={theme} />
             <main className="  py-24 px-8
             font-light  leading-8 text-black dark:text-stone-100 
-            lg:w-3/5
-            min-h-screen overflow-y-auto
+            container max-w-4xl
             "
             >
 

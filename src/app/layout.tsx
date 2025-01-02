@@ -6,6 +6,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { cookies } from 'next/headers';
 import { ThemeContextProvider, MobileMenuContextProvider } from './contexts';
 import Main from './components/main';
+import Footer from './components/footer';
 
 export const metadata: Metadata = {
   title: 'Baran UI',
@@ -33,6 +34,8 @@ const theme = cookies().get('theme')?.value;
           <Main>
             {children}
           </Main>
+          <Footer />
+
         <SpeedInsights />
         <Analytics />
         </MobileMenuContextProvider>

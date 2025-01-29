@@ -11,7 +11,7 @@ export default function CookieAlert (){
         <div className={`fixed bottom-4 left-4  px-4 max-w-lg  flex
         ${dismiss ? 'hidden' : ' '}
         `}>
-            <div className="px-6 py-3 bg-white flex items-center  shadow-md dark:bg-slate-600 border dark:border-white rounded-md">
+            <div className="px-6 py-3 bg-white flex items-center  shadow-md dark:bg-slate-600 border dark:border-slate-700 rounded-md">
                 <div>
                     <h1 className=" text-3xl sm:text-5xl  font-medium
                     text-gray-800 dark:text-black mr-2">

@@ -52,19 +52,18 @@ export default function CalendarComponent(){
             </div>
         <div className="grid grid-cols-7 gap-2 justify-items-center bg-white dark:bg-slate-600 py-2 rounded-md">
             {weekDays.map(day => (
-                <div key={day} className="text-center font-medium text-white text-sm h-8 w-8">
+                <div key={day} className="text-center font-medium text-black dark:text-white text-sm h-8 w-8">
                     {day}
                 </div>
             ))}
             {calendarGrid.map((data, index) => {
                 return (
                     <div key={index}
-                        className={`w-8 h-8 
-                        rounded-full flex items-center justify-center
-                        font-bold text-2xl relative group cursor-default z-20
-                        ${isToday(new Date(data.date)) ? 'bg-blue-500 text-white' : ''}
-                        ${data.currentMonth ? 'text-black dark:text-white' : 'text-gray-300'}
-                       
+                        className={`w-8 h-8 sm:w-10 sm:h-10
+                            rounded-full flex items-center justify-center
+                            font-bold text-2xl relative group cursor-default z-20  
+                            ${isToday(new Date(data.date)) ? 'bg-blue-500 text-white ' : ''}
+                            ${data.currentMonth ? 'text-black dark:text-white' : 'text-gray-300'}
                         `}
                     >
                         {data.day}

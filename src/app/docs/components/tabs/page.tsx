@@ -2,9 +2,9 @@
 import Pathway from "@/app/components/pathway"
 import { useState } from "react"
 import TabSwitch from "@/app/components/tab-switch"
-import CodePreview from "@/app/components/code-preview"
 import TabComponent from "./tabs"
 import TabComponentDifferentStyle from "./tabs2"
+import { CodeBlock } from "@/app/components/code-block"
 
 export default function Tabs(){
 const code = `<div className=" w-3/4">
@@ -73,7 +73,7 @@ const [preview, setPreview] = useState(true)
             <div>
                 <TabSwitch preview={preview} setPreview={setPreview} />
                 
-                {preview ? <TabComponent /> :  <CodePreview>{code}</CodePreview>}
+                {preview ? <TabComponent /> :  <CodeBlock   code={code} filename="tabs.tsx" />}
             </div>
             <div className="mt-8">
                 <h2 className="text-xl font-semibold mb-4"> Another Style</h2>

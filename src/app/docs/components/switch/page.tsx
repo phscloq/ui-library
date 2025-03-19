@@ -3,7 +3,7 @@ import Pathway from "@/app/components/pathway"
 import { useState } from "react"
 import SwitchComponent from "./switch"
 import TabSwitch from "@/app/components/tab-switch"
-import CodePreview from "@/app/components/code-preview"
+import { CodeBlock } from "@/app/components/code-block"
 
 export default function Switch(){
 const code = `<label
@@ -31,7 +31,7 @@ const [preview, setPreview] = useState(true)
             <div>
                 <TabSwitch preview={preview} setPreview={setPreview} />
                 
-                {preview ? <SwitchComponent /> :  <CodePreview>{code}</CodePreview>}
+                {preview ? <SwitchComponent /> :  <CodeBlock code={code} filename="switch.tsx" /> }
             </div>
             
             

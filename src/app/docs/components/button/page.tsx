@@ -3,7 +3,7 @@ import Button from "./button"
 import { useState } from "react"
 import TabSwitch from "@/app/components/tab-switch"
 import Pathway from "@/app/components/pathway"
-import CodePreview from "@/app/components/code-preview"
+import { CodeBlock } from "@/app/components/code-block"
 
 export default function ButtonPage(){
   const code = `
@@ -24,7 +24,7 @@ const [preview, setPreview] = useState(true)
              <div>
              <TabSwitch preview={preview} setPreview={setPreview} />
 
-             {preview ? <Button /> :  <CodePreview>{code}</CodePreview>}
+             {preview ? <Button /> :  <CodeBlock code={code} language="tsx" filename="button.tsx"/>}
              </div>
         </div>
     )

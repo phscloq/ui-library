@@ -1,9 +1,9 @@
 'use client'
-import CodePreview from "@/app/components/code-preview"
 import Pathway from "@/app/components/pathway"
 import TabSwitch from "@/app/components/tab-switch"
 import { useState } from "react"
 import ProgressBarComponent from "./progress-bar"
+import { CodeBlock } from "@/app/components/code-block"
 
 export default function ProgressBarPage(){
     const code = `
@@ -34,7 +34,7 @@ export default function ProgressBarPage(){
             <div>
                 <TabSwitch preview={preview} setPreview={setPreview} />
                 
-                {preview ? <ProgressBarComponent progress_score={0.8} /> :  <CodePreview>{code}</CodePreview>}
+                {preview ? <ProgressBarComponent progress_score={0.8} /> :  <CodeBlock code={code} language="tsx" filename="progress-bar.tsx"/>}
             </div>
             
             

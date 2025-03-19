@@ -2,8 +2,8 @@
 import Pathway from "@/app/components/pathway"
 import { useState } from "react"
 import TabSwitch from "@/app/components/tab-switch"
-import CodePreview from "@/app/components/code-preview"
 import TooltipComponent from "./tooltip"
+import { CodeBlock } from "@/app/components/code-block"
 export default function Tooltip(){
 const code = `<div className="relative inline-block group">
             {children}
@@ -30,7 +30,7 @@ const [preview, setPreview] = useState(true)
                       hover:bg-slate-300  active:bg-slate-500 active:text-slate-100 dark:hover:bg-slate-700">
                         Hover
                     </button>
-                </TooltipComponent>:  <CodePreview>{code}</CodePreview>}
+                </TooltipComponent>:  <CodeBlock code={code} language="tsx" filename="tooltip.tsx"/>}
             </div>
             
             

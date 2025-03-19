@@ -1,5 +1,5 @@
 'use client'
-import CodePreview from "@/app/components/code-preview"
+import { CodeBlock } from "@/app/components/code-block"
 import Pathway from "@/app/components/pathway"
 import TabSwitch from "@/app/components/tab-switch"
 import { useState } from "react"
@@ -27,7 +27,7 @@ export default function BadgePage(){
             <div>
                 <TabSwitch preview={preview} setPreview={setPreview} />
                 
-                {preview ? <Badge>Badge</Badge>:  <CodePreview>{code}</CodePreview>}
+                {preview ? <Badge>Badge</Badge>:  <CodeBlock code={code} language="tsx" filename="badge.tsx"/>}
             </div>
             
             

@@ -1,10 +1,10 @@
 'use client'
-import CodePreview from "@/app/components/code-preview"
 import Pathway from "@/app/components/pathway"
 import TabSwitch from "@/app/components/tab-switch"
 import { useState } from "react"
 import CardComponent from "./card"
 import Features from "@/app/components/features"
+import { CodeBlock } from "@/app/components/code-block"
 
 export default function CardPage(){
     const code = `
@@ -37,7 +37,7 @@ export default function CardPage(){
             <div>
                 <TabSwitch preview={preview} setPreview={setPreview} />
                 
-                {preview ? <CardComponent /> :  <CodePreview>{code}</CodePreview>}
+                {preview ? <CardComponent /> :  <CodeBlock code={code} language="tsx" filename="card.tsx"/>}
             </div>
             
             

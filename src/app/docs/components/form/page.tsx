@@ -3,8 +3,8 @@ import Pathway from "@/app/components/pathway"
 import { useState } from "react"
 import FormComponent from "./form"
 import TabSwitch from "@/app/components/tab-switch"
-import CodePreview from "@/app/components/code-preview"
 import Tips from "@/app/components/tips"
+import { CodeBlock } from "@/app/components/code-block"
 
 export default function Form(){
 const code = `<div className=' mx-auto w-full  max-w-md space-y-2 bg-white  dark:bg-slate-600 border border-slate-300  dark:text-hite '>
@@ -58,7 +58,7 @@ const [preview, setPreview] = useState(true)
             <div>
                 <TabSwitch preview={preview} setPreview={setPreview} />
                 
-                {preview ? <FormComponent /> :  <CodePreview>{code}</CodePreview>}
+                {preview ? <FormComponent /> :  <CodeBlock code={code} language="tsx" filename="form.tsx"/>}
             </div>
             <Tips>
                 <li>Add your login action to the button&apos;s formSubmit property.</li>

@@ -1,9 +1,9 @@
 'use client'
-import CodePreview from "@/app/components/code-preview"
 import Pathway from "@/app/components/pathway"
 import TabSwitch from "@/app/components/tab-switch"
 import { useState } from "react"
 import CheckboxComponent from "./checkbox"
+import { CodeBlock } from "@/app/components/code-block"
 
 export default function CheckboxPage(){
     const code = `
@@ -42,7 +42,7 @@ export default function CheckboxPage(){
             <div>
                 <TabSwitch preview={preview} setPreview={setPreview} />
                 
-                {preview ? <CheckboxComponent /> :  <CodePreview>{code}</CodePreview>}
+                {preview ? <CheckboxComponent /> :  <CodeBlock  code={code} language="tsx" filename="checkbox.tsx"/>}
             </div>
             
             

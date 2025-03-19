@@ -1,9 +1,9 @@
 'use client'
-import CodePreview from "@/app/components/code-preview"
 import Pathway from "@/app/components/pathway"
 import TabSwitch from "@/app/components/tab-switch"
 import { useState } from "react"
 import AlertComponent from "./alert"
+import { CodeBlock } from "@/app/components/code-block"
 
 export default function AlertPage(){
     const code = `
@@ -56,7 +56,7 @@ export default function AlertPage(){
             <div>
                 <TabSwitch preview={preview} setPreview={setPreview} />
                 
-                {preview ? <AlertComponent /> :  <CodePreview>{code}</CodePreview>}
+                {preview ? <AlertComponent /> :  <CodeBlock code={code} language="tsx" filename="alert.tsx"/>}
             </div>
             
             

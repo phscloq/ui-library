@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { DialogTrigger } from './dialog';
 import Pathway from '@/app/components/pathway';
 import TabSwitch from '@/app/components/tab-switch';
-import CodePreview from '@/app/components/code-preview';
+import { CodeBlock } from '@/app/components/code-block';
 
 export default function DialogPage() {
   const code = `
@@ -100,7 +100,7 @@ export function DialogTrigger(){
     <div>
         <TabSwitch preview={preview} setPreview={setPreview} />
         
-        {preview ? <DialogTrigger /> :  <CodePreview>{code}</CodePreview>}
+        {preview ? <DialogTrigger /> :  <CodeBlock code={code} language="tsx" filename="dialog.tsx"/>}
     </div>
     
     

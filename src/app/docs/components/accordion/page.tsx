@@ -3,7 +3,7 @@ import Pathway from "@/app/components/pathway";
 import { AccordionComponent, AccordionArrow, AccordionTriple } from "./accordion";
 import { useState } from "react";
 import TabSwitch from "@/app/components/tab-switch";
-import CodePreview from "@/app/components/code-preview";
+import { CodeBlock } from "@/app/components/code-block";
 export default function Accordion(){
     const code = `
     const [accordionArr, setAccordionArr] = useState([false, false , false]);
@@ -123,7 +123,7 @@ const [preview, setPreview] = useState(true)
             <h4 className="mb-4">Example:</h4>
                 <TabSwitch preview={preview} setPreview={setPreview} />
                 
-                  {preview ? <AccordionTriple /> :  <CodePreview>{code}</CodePreview> }  
+                  {preview ? <AccordionTriple /> :  <CodeBlock code={code} language="tsx" filename="accordion.tsx" />}  
                 </div>
            </div>
            

@@ -1,9 +1,9 @@
 'use client'
-import CodePreview from "@/app/components/code-preview"
 import Pathway from "@/app/components/pathway"
 import TabSwitch from "@/app/components/tab-switch"
 import { useState } from "react"
 import CalendarComponent from "./calendar"
+import { CodeBlock } from "@/app/components/code-block"
 
 export default function CalendarPage(){
     const code = `
@@ -106,7 +106,7 @@ export default function CalendarComponent(){
             <div>
                 <TabSwitch preview={preview} setPreview={setPreview} />
                 
-                {preview ? <CalendarComponent /> :  <CodePreview>{code}</CodePreview>}
+                {preview ? <CalendarComponent /> :  <CodeBlock code={code} language="tsx" filename="calendar.tsx"/>}
             </div>
             
             

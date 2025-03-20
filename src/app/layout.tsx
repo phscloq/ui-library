@@ -7,6 +7,7 @@ import { cookies } from 'next/headers';
 import { ThemeContextProvider, MobileMenuContextProvider } from './contexts';
 import Main from './components/main';
 import Footer from './components/footer';
+import CookieAlert from './components/cookie-alert';
 
 export const metadata: Metadata = {
   title: 'Baran UI',
@@ -19,6 +20,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
 const theme = cookies().get('theme')?.value;
+const isDismissed = cookies().get('cookieWarningDismissed')?.value === 'true';
 
   return (
     <html lang="en" className={`${theme === 'dark' ? 'dark' : 'light'}`}>        
@@ -33,6 +35,7 @@ const theme = cookies().get('theme')?.value;
             
           <Main>
             {children}
+            {!isDismissed && <CookieAlert />}
           </Main>
           <Footer />
 

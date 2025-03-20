@@ -32,7 +32,6 @@ export default function Main({children}:Props){
             </main>
              </div>
              <MobileMenu />
-        <CookieAlert />
         </div>
     )
 }
